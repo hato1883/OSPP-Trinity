@@ -1,0 +1,27 @@
+version: '3.2'
+services:
+  db:
+    image: postgres
+    environment:
+     - POSTGRES_HOST_AUTH_METHOD=trust
+
+  web:
+    build: .
+    volumes:
+      - type: bind
+        source: .
+        target: /app
+    ports:
+      - 8080:80
+      - 8081:443
+    environment:
+      # Modify your config files (dev.exs and test.exs) so that the password and hostname can be overridden
+      # when environment variables are set:
+      # password: System.get_env("DB_PASS", "postgres"),
+      # hostname: System.get_env("DB_HOST", "localhost"),
+      - DB_PASS=
+      - DB_HOST=db
+    depends_on:
+      - db
+    command:
+      - ./run.sh
