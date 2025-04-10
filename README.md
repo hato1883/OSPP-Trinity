@@ -6,6 +6,12 @@ To start your Phoenix server:
 
 Now you can visit [`localhost:8080`](http://localhost:8080) from your browser.
 
+
+To connect the two Phoenix nodes:
+
+  * Run `iex --cookie HARALD --sname console --remsh web@node-1` to connect an elixir console to the running instance inside of docker container `node-1`.
+  * Run `Node.connect(:"web@node-2")` to connect node 1 to node 2, now you can enter the admin panel at [`localhost:8080/dev/dashboard/`](http://localhost:8080/dev/dashboard/)
+
 Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
 
 ## Learn more
