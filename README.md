@@ -3,7 +3,7 @@
 To start your Phoenix server:
 
   * Run `docker compose up` to install and setup server
-  * If you get an error lookling like :
+  * If you get an error looking like:
   ```
   unable to get image 'ospp-trinity-web': permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.48/images/ospp-trinity-web/json": dial unix /var/run/docker.sock: connect: permission denied
   ```
