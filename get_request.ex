@@ -36,6 +36,15 @@ defmodule GetRequest do
     GetRequest.localhost_req()
   end 
 
+  def requester_loop(iteration) when iteration < 100 do
+    spawn(fn -> localhost() end)
+    IO.puts("Requester made")
+    requester_loop(iteration + 1)
+  end
+  
+  def requester_loop(_iteration), do: :ok
+  
+
   def testing do
     # {:ok, _} = Application.ensure_all_started(:req)
     response = Req.get!("https://www.google.com")
@@ -52,4 +61,6 @@ end
 # GetRequest.testing()
 # GetRequest.weather()
 # GetRequest.localhost_uptime()
-GetRequest.localhost()
+# GetRequest.localhost()
+GetRequest.requester_loop(0)
+Process.sleep(50000)
