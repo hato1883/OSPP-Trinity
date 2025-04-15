@@ -50,4 +50,5 @@ mix test
 
 echo "\n Launching Phoenix web server..."
 # Start the phoenix web server
-elixir --sname web@$NODE_NAME --cookie $ERLANG_COOKIE -S mix phx.server
+echo "connect to: web@$HOSTNAME with cookie: $ERLANG_COOKIE"
+elixir --sname web --cookie $ERLANG_COOKIE -S mix phx.server
