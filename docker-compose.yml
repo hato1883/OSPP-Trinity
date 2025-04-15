@@ -6,6 +6,11 @@ services:
     environment:
      - POSTGRES_HOST_AUTH_METHOD=trust
 
+  lb:
+    build: ./load-balancer/
+    ports:
+      - 8080:80
+
   node-1:
     build: ./website-application/
     volumes:
