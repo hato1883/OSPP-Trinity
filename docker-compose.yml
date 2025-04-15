@@ -7,13 +7,13 @@ services:
      - POSTGRES_HOST_AUTH_METHOD=trust
 
   node-1:
-    build: .
+    build: ./website-application/
     volumes:
       - type: bind
-        source: .
+        source: ./website-application/
         target: /app
     ports:
-      - 8080:80
+      - 8081:80
     environment:
       # Modify your config files (dev.exs and test.exs) so that the password and hostname can be overridden
       # when environment variables are set:
@@ -29,13 +29,13 @@ services:
       - ./run.sh
 
   node-2:
-    build: .
+    build: ./website-application/
     volumes:
       - type: bind
-        source: .
+        source: ./website-application/
         target: /app
     ports:
-      - 8081:80
+      - 8082:80
     environment:
       # Modify your config files (dev.exs and test.exs) so that the password and hostname can be overridden
       # when environment variables are set:
