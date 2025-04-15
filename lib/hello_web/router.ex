@@ -8,6 +8,14 @@ defmodule HelloWeb.Router do
     plug :put_root_layout, html: {HelloWeb.Layouts, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug HelloWeb.Plugs.Locale, "en"
+  end
+
+  pipeline :auth do
+    plug :browser
+    # plug :ensure_authenticated_user
+    # plug :ensure_user_owns_review
+    plug HelloWeb.Authentication
   end
 
   pipeline :api do
@@ -18,8 +26,17 @@ defmodule HelloWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+
+    resources "/users", UserController
+    # do
+    #   resources "/posts", PostController, only: [:index, :show]
+    #   do
+    #   resources "/comments", PostController, except: [:delete]
+    #   end
+    # end
+
     get "/hello", HelloController, :index
-    get "hello/:messenger", HelloController, :show
+    get "/hello/:messenger", HelloController, :show
   end
 
   # Other scopes may use custom stacks.
