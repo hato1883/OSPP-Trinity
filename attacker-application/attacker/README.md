@@ -1,21 +1,34 @@
-# Attacker
+# Attacker Application
 
-**TODO: Add description**
+The `attacker-application` is a utility designed for testing and generating HTTP requests, as well as creating large JSON payloads for stress testing or other purposes. It includes modules for making GET and POST requests, generating JSON files, and interacting with external APIs.
 
-## Installation
+## Features
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `attacker` to your list of dependencies in `mix.exs`:
+- **HTTP Requests**: Perform GET and POST requests to specified endpoints.
+- **JSON Generation**: Generate large JSON files with random data for testing purposes.
+- **External API Interaction**: Fetch data from external APIs, such as weather information.
+- **Concurrency**: Spawn multiple processes to simulate concurrent requests.
 
+## Modules
+
+### `Attacker`
+A simple module with a `hello/0` function for demonstration purposes.
+
+### `JsonGenerator`
+Generates large JSON files with random data.
+
+### `get_request`
+Handles HTTP GET requests to specified endpoints. This module allows users to send GET requests and retrieve responses, making it useful for testing APIs or fetching data from web services.
+
+Example:
 ```elixir
-def deps do
-  [
-    {:attacker, "~> 0.1.0"}
-  ]
-end
+GetRequest.perform("https://api.example.com/data")
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/attacker>.
+### `attack_token`
+Same as `get_request` but uses token or "IP" to identify each individual client.
+
+Example: 
+```elixir
+JsonGenerator.generate("output.json", 1_000_000)
 
