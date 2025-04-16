@@ -31,4 +31,5 @@ See `../website-application/` for more information regarding the HTTP servers.
 
 You can configure the list of backend servers as well as rate limiting strategies etc. in the module's configuration file `haproxy.cfg`.
 
-There is currently an issue where the docker image does not rebuild if config is updated. To solve this simply delete the image and rebuild / run the network again. It should use the majority of the cached image from before.
+
+IF config is not loaded/updated on change try deleting the image and rebuilding it.

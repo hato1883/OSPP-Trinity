@@ -11,6 +11,11 @@ services:
     build: ./load-balancer/
     ports:
       - 8080:80
+    volumes:
+      # bind haproxy.cfg to the container
+      - type: bind
+        source: ./load-balancer/haproxy.cfg
+        target: /usr/local/etc/haproxy/haproxy.cfg
     depends_on:
       - node-1
       - node-2
