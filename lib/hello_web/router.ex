@@ -1,6 +1,8 @@
 defmodule HelloWeb.Router do
   use HelloWeb, :router
 
+  import HelloWeb.UserAuth
+
   pipeline :browser do
     plug :accepts, ["html","json"]
     plug :fetch_session
@@ -8,13 +10,12 @@ defmodule HelloWeb.Router do
     plug :put_root_layout, html: {HelloWeb.Layouts, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug :fetch_current_user
     plug HelloWeb.Plugs.Locale, "en"
   end
 
   pipeline :auth do
     plug :browser
-    # plug :ensure_authenticated_user
-    # plug :ensure_user_owns_review
     plug HelloWeb.Authentication
   end
 
@@ -26,14 +27,6 @@ defmodule HelloWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
-
-    resources "/users", UserController
-    # do
-    #   resources "/posts", PostController, only: [:index, :show]
-    #   do
-    #   resources "/comments", PostController, except: [:delete]
-    #   end
-    # end
 
     get "/hello", HelloController, :index
     get "/hello/:messenger", HelloController, :show
@@ -59,6 +52,44 @@ defmodule HelloWeb.Router do
 
       live_dashboard "/dashboard", metrics: HelloWeb.Telemetry
       forward "/mailbox", Plug.Swoosh.MailboxPreview
+    end
+  end
+
+  ## Authentication routes
+
+  scope "/", HelloWeb do
+    pipe_through [:browser, :redirect_if_user_is_authenticated]
+
+    live_session :redirect_if_user_is_authenticated,
+      on_mount: [{HelloWeb.UserAuth, :redirect_if_user_is_authenticated}] do
+      live "/users/register", UserRegistrationLive, :new
+      live "/users/log_in", UserLoginLive, :new
+      live "/users/reset_password", UserForgotPasswordLive, :new
+      live "/users/reset_password/:token", UserResetPasswordLive, :edit
+    end
+
+    post "/users/log_in", UserSessionController, :create
+  end
+
+  scope "/", HelloWeb do
+    pipe_through [:browser, :require_authenticated_user]
+
+    live_session :require_authenticated_user,
+      on_mount: [{HelloWeb.UserAuth, :ensure_authenticated}] do
+      live "/users/settings", UserSettingsLive, :edit
+      live "/users/settings/confirm_email/:token", UserSettingsLive, :confirm_email
+    end
+  end
+
+  scope "/", HelloWeb do
+    pipe_through [:browser]
+
+    delete "/users/log_out", UserSessionController, :delete
+
+    live_session :current_user,
+      on_mount: [{HelloWeb.UserAuth, :mount_current_user}] do
+      live "/users/confirm/:token", UserConfirmationLive, :edit
+      live "/users/confirm", UserConfirmationInstructionsLive, :new
     end
   end
 end
