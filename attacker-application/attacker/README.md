@@ -28,7 +28,7 @@ Handles HTTP GET requests to specified endpoints. This module allows users to se
 Example:
 ```elixir
 GetRequest.perform("https://api.example.com/data")
-
+```
 
 ### `attack_token`
 Same as `get_request` but uses token or "IP" to identify each individual client.
