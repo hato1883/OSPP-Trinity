@@ -10,9 +10,15 @@ To start your Phoenix server:
   Try running `sudo docker compose up`
 
 
+
 Now you can visit [`localhost:8080`](http://localhost:8080) from your browser.
 
 Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+
+# Running a shell inside the container
+Use `docker ps` to get the names of all running containers
+
+To run a shell inside the container run `docker exec -it ospp-trinity-web-1 sh`. This is important for running `mix` commands
 
 ## Learn more
 
