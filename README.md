@@ -20,6 +20,10 @@ Use `docker ps` to get the names of all running containers
 
 To run a shell inside the container run `docker exec -it ospp-trinity-web-1 sh`. This is important for running `mix` commands
 
+# Updating the Phoenix build
+
+If you update the build in any way by using a `mix` command. Remember that you will also have to run `mix deps.get` and `mix ecto.migrate` to rebuild your dependencies and migrate the database respectively.  
+
 ## Learn more
 
   * Official website: https://www.phoenixframework.org/
