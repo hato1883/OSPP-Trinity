@@ -1,8 +1,34 @@
-# Load balancer Container
+# Load Balancer
 
-To configure the load balancer:
+This module is designed to handle load balancing between multiple HTTP servers. It ensures efficient distribution of incoming requests to the available servers, improving performance and reliability.
 
-  * Edit `nginx.conf` to add backend nodes to balance to.
-  * Restart nginx container: `docker compose restart lb`
+See `../website-application/` for more information regarding the HTTP servers.
 
-Now you can visit [`localhost:8080`](http://localhost:8080) from your browser and should be forwarded to one of the nodes.
+## Features
+
+- Load balancing across multiple HTTP servers.
+- Accessible via `http://localhost:8080`.
+
+## Installation
+
+1. Clone the repository:
+    ```bash
+    git clone <repository-url>
+    ```
+
+## Usage
+
+1. Start the load balancer:
+    ```bash
+   docker compose up -d
+    ```
+2. Access the load balancer at:
+    ```
+    http://localhost:8080
+    ```
+
+## Configuration
+
+You can configure the list of backend servers as well as rate limiting strategies etc. in the module's configuration file `haproxy.cfg`.
+
+There is currently an issue where the docker image does not rebuild if config is updated. To solve this simply delete the image and rebuild / run the network again. It should use the majority of the cached image from before.
