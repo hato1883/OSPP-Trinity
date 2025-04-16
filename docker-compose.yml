@@ -6,10 +6,10 @@ services:
      - POSTGRES_HOST_AUTH_METHOD=trust
 
   web:
-    build: .
+    build: ./website-application
     volumes:
       - type: bind
-        source: .
+        source: ./website-application
         target: /app
     ports:
       - 8080:80
