@@ -23,5 +23,4 @@ services:
       - DB_HOST=db
     depends_on:
       - db
-    command:
-      - ./run.sh
+    command: ["./run.sh"]
