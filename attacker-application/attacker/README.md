@@ -17,18 +17,20 @@ A simple module with a `hello/0` function for demonstration purposes.
 ### `JsonGenerator`
 Generates large JSON files with random data.
 
+Example: 
+```elixir
+JsonGenerator.generate("output.json", 1_000_000)
+```
+
 ### `get_request`
 Handles HTTP GET requests to specified endpoints. This module allows users to send GET requests and retrieve responses, making it useful for testing APIs or fetching data from web services.
 
 Example:
 ```elixir
 GetRequest.perform("https://api.example.com/data")
-```
+
 
 ### `attack_token`
 Same as `get_request` but uses token or "IP" to identify each individual client.
 
-Example: 
-```elixir
-JsonGenerator.generate("output.json", 1_000_000)
 
