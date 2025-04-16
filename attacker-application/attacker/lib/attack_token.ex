@@ -22,9 +22,9 @@ defmodule GetRequest do
     # IO.inspect(lines)
     IO.puts(uptime)
   end
-  def localhost_get do
+  def localhost_get(iteration) do
     IO.puts("Request loop started...")
-    GetRequest.localhost_get_req()
+    GetRequest.localhost_get_req(iteration)
   end
 
   def localhost_post do
@@ -34,32 +34,35 @@ defmodule GetRequest do
     GetRequest.localhost_post_req(data)
   end
 
-  def localhost_get_req do
-    Req.get("http://192.168.47.237:8080/")
+  def localhost_get_req(iteration) do
+
+    Req.get("http://192.168.47.237:8080/?ip=#{iteration}")
     # IO.puts("Request made!")
     # IO.puts("Waiting for 1 second(s)...")
     # :timer.sleep(1000)
     # IO.puts("Done!")
-    GetRequest.localhost_get_req()
+    GetRequest.localhost_get_req(iteration + 1)
   end
 
   def localhost_post_req(data) do
-    Req.post("http://192.168.47.237:8080/",
+    Req.post("http://192.168.47.237:8080/?ip=abcd",
         json: data
         )
     # IO.puts("Done!")
     GetRequest.localhost_post_req(data)
   end
 
-  # It seems like iteration = 20 and iteration = 375 have the same effect on the server
-  def requester_loop(iteration) when iteration < 100 do
-    spawn(fn -> localhost_get() end)
+  def requester_loop(iteration) when iteration < 40 do
+    spawn(fn -> localhost_get(iteration) end)
     IO.puts("Requester made")
     requester_loop(iteration + 1)
   end
 
   def requester_loop(_iteration), do: :ok
 
+  def print_wait do
+    IO.puts("Wait for 20 seconds!")
+  end
 
   def testing do
     # {:ok, _} = Application.ensure_all_started(:req)
@@ -79,4 +82,5 @@ end
 # GetRequest.localhost_uptime()
 # GetRequest.localhost()
 GetRequest.requester_loop(0)
-Process.sleep(50000)
+GetRequest.print_wait()
+Process.sleep(20000)
