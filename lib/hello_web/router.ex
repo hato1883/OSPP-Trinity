@@ -2,7 +2,7 @@ defmodule HelloWeb.Router do
   use HelloWeb, :router
 
   pipeline :browser do
-    plug :accepts, ["html"]
+    plug :accepts, ["html","json"]
     plug :fetch_session
     plug :fetch_live_flash
     plug :put_root_layout, html: {HelloWeb.Layouts, :root}
@@ -37,6 +37,7 @@ defmodule HelloWeb.Router do
 
     get "/hello", HelloController, :index
     get "/hello/:messenger", HelloController, :show
+    get "/admin", AdminController, :index
   end
 
   # Other scopes may use custom stacks.
