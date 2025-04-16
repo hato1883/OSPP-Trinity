@@ -22,22 +22,37 @@ defmodule GetRequest do
     # IO.inspect(lines)
     IO.puts(uptime)
   end 
-  def localhost do
+  def localhost_get do
     IO.puts("Request loop started...")
-    GetRequest.localhost_req()
+    GetRequest.localhost_get_req()
   end 
 
-  def localhost_req do
-    Req.get("http://localhost:8080/dev/dashboard/home")
+  def localhost_post do
+    IO.puts("Request loop started...")
+    {:ok, body} = File.read("./nuke.json")
+    {:ok, data} = Jason.decode(body)
+    GetRequest.localhost_post_req(data)
+  end 
+
+  def localhost_get_req do
+    Req.get("http://192.168.47.237:8080/")
     # IO.puts("Request made!")
     # IO.puts("Waiting for 1 second(s)...")
     # :timer.sleep(1000)
     # IO.puts("Done!")
-    GetRequest.localhost_req()
+    GetRequest.localhost_get_req()
+  end 
+
+  def localhost_post_req(data) do
+    Req.post("http://192.168.47.237:8080/", 
+        json: data
+        )
+    # IO.puts("Done!")
+    GetRequest.localhost_post_req(data)
   end 
 
   def requester_loop(iteration) when iteration < 100 do
-    spawn(fn -> localhost() end)
+    spawn(fn -> localhost_get() end)
     IO.puts("Requester made")
     requester_loop(iteration + 1)
   end
