@@ -1,7 +1,6 @@
 defmodule HelloWeb.ThermostatLive do
   use HelloWeb, :live_view
 
-
   def render(assigns) do
     ~H"""
     Current temperature: {@temperature} °C <button phx-click="inc_temperature">+</button>
@@ -13,6 +12,21 @@ defmodule HelloWeb.ThermostatLive do
 
     <p>How about this: {@request}</p>
     <button phx-click="request">request</button>
+
+    <div style="height: 150px; overflow-y: auto; border: 1px solid #ccc; margin-top: 10px; padding: 5px;">
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+        <li>Item 6</li>
+        <li>Item 7</li>
+        <li>Item 8</li>
+        <li>Item 9</li>
+        <li>Item 10</li>
+      </ul>
+    </div>
     """
   end
 
