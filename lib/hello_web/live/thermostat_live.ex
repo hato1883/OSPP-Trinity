@@ -1,6 +1,6 @@
 defmodule HelloWeb.ThermostatLive do
   use HelloWeb, :live_view
- 
+
 
   def render(assigns) do
     ~H"""
@@ -38,15 +38,6 @@ defmodule HelloWeb.ThermostatLive do
 
       "random" ->
         {:noreply, update(socket, :temperature, fn _ -> :rand.uniform(100) end)}
-
-      "request" ->
-        case HTTPoison.get("http://www.google.com") do
-          {:ok, %HTTPoison.Response{body: body}} ->
-            {:noreply, assign(socket, :request, body)}
-
-          {:error, %HTTPoison.Error{reason: reason}} ->
-            {:noreply, assign(socket, :request, "Error: #{reason}")}
-        end
 
       _ ->
         # Default case for unhandled events
