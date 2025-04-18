@@ -24,6 +24,10 @@ To run a shell inside the container run `docker exec -it ospp-trinity-web-1 sh`.
 
 If you update the build in any way by using a `mix` command. Remember that you will also have to run `mix deps.get` and `mix ecto.migrate` to rebuild your dependencies and migrate the database respectively.  
 
+# Updating file permissions
+
+If you run any command that generates files from within a container, the files generated may have different permissions and won't be editable from your machine. Fix this by running `sudo chown -R $(whoami):$(whoami) ./` to recursively change the permissions to your current user throughout the entire directory.
+
 ## Learn more
 
   * Official website: https://www.phoenixframework.org/
