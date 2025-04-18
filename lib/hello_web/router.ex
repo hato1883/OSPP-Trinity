@@ -4,7 +4,7 @@ defmodule HelloWeb.Router do
   import HelloWeb.UserAuth
 
   pipeline :browser do
-    plug :accepts, ["html","json"]
+    plug :accepts, ["html", "json"]
     plug :fetch_session
     plug :fetch_live_flash
     plug :put_root_layout, html: {HelloWeb.Layouts, :root}
@@ -28,10 +28,17 @@ defmodule HelloWeb.Router do
 
     get "/", PageController, :home
 
+    live "/posts", PostLive.Index, :index
+    live "/posts/new", PostLive.Index, :new
+    live "/posts/:id/edit", PostLive.Index, :edit
+
+    live "/posts/:id", PostLive.Show, :show
+    live "/posts/:id/show/edit", PostLive.Show, :edit
+
     get "/hello", HelloController, :index
     get "/hello/:messenger", HelloController, :show
     get "/admin", AdminController, :index
-    live "/thermostat",ThermostatLive
+    live "/thermostat", ThermostatLive
   end
 
   # Other scopes may use custom stacks.
