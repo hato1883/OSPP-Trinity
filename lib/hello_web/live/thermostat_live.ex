@@ -15,16 +15,16 @@ defmodule HelloWeb.ThermostatLive do
 
     <div style="height: 150px; overflow-y: auto; border: 1px solid #ccc; margin-top: 10px; padding: 5px;">
       <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-        <li>Item 4</li>
-        <li>Item 5</li>
-        <li>Item 6</li>
-        <li>Item 7</li>
-        <li>Item 8</li>
-        <li>Item 9</li>
-        <li>Item 10</li>
+        <li><.icon name="hero-server-solid" /> Item 1</li>
+        <li><.icon name="hero-server-solid" /> Item 2</li>
+        <li><.icon name="hero-server-solid" /> Item 3</li>
+        <li><.icon name="hero-server-solid" /> Item 4</li>
+        <li><.icon name="hero-server-solid" /> Item 5</li>
+        <li><.icon name="hero-server-solid" /> Item 6</li>
+        <li><.icon name="hero-server-solid" /> Item 7</li>
+        <li><.icon name="hero-server-solid" /> Item 8</li>
+        <li><.icon name="hero-server-solid" /> Item 9</li>
+        <li><.icon name="hero-server-solid" /> Item 10</li>
       </ul>
     </div>
     """
