@@ -1,6 +1,8 @@
 defmodule HelloWeb.AdminLive do
   use HelloWeb, :live_view
 
+  alias Pheonix.PubSub
+
   def render(assigns) do
     ~H"""
     Current temperature: {@temperature} °C <button phx-click="inc_temperature">+</button>
@@ -13,30 +15,52 @@ defmodule HelloWeb.AdminLive do
     <p>How about this: {@request}</p>
     <button phx-click="request">request</button>
 
+    <h3>Running Servers</h3>
     <div style="height: 150px; overflow-y: auto; border: 1px solid #ccc; margin-top: 10px; padding: 5px;">
       <ul>
-        <li><.icon name="hero-server-solid" /> Item 1</li>
-        <li><.icon name="hero-server-solid" /> Item 2</li>
-        <li><.icon name="hero-server-solid" /> Item 3</li>
-        <li><.icon name="hero-server-solid" /> Item 4</li>
-        <li><.icon name="hero-server-solid" /> Item 5</li>
-        <li><.icon name="hero-server-solid" /> Item 6</li>
-        <li><.icon name="hero-server-solid" /> Item 7</li>
-        <li><.icon name="hero-server-solid" /> Item 8</li>
-        <li><.icon name="hero-server-solid" /> Item 9</li>
-        <li><.icon name="hero-server-solid" /> Item 10</li>
+        <%= for server <- @servers do %>
+          <li>
+            <.icon name="hero-server-solid" />
+            {server.name} - Status: {server.status}
+          </li>
+        <% end %>
       </ul>
     </div>
     """
   end
 
   def mount(_params, _session, socket) do
+    # Example list of servers
+    PubSub.subscribe(HelloWeb.PubSub, "servers:updates")
+
+    # Initial list of servers
+    servers = [
+      %{name: "Server 1", status: "Unknown"},
+      %{name: "Server 2", status: "Unknown"},
+      %{name: "Server 3", status: "Unknown"},
+      %{name: "Server 4", status: "Unknown"}
+    ]
+
     socket =
       socket
       |> assign(:temperature, 70)
       |> assign(:request, "RARAREQUEST")
+      |> assign(:servers, servers)
 
     {:ok, socket}
+  end
+
+  def handle_info(%{event: "server_update", payload: server_update}, socket) do
+    updated_servers =
+      Enum.map(socket.assigns.servers, fn server ->
+        if server.name == server_update.name do
+          %{server | status: server_update.status}
+        else
+          server
+        end
+      end)
+
+    {:noreply, assign(socket, :servers, updated_servers)}
   end
 
   def handle_event(event, _params, socket) do
