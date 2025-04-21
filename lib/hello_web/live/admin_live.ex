@@ -1,8 +1,6 @@
 defmodule HelloWeb.AdminLive do
   use HelloWeb, :live_view
 
-  alias Pheonix.PubSub
-
   def render(assigns) do
     ~H"""
     Current temperature: {@temperature} °C <button phx-click="inc_temperature">+</button>
@@ -26,19 +24,18 @@ defmodule HelloWeb.AdminLive do
         <% end %>
       </ul>
       <ul>
-      <%= for node <- @nodes do %>
-      <li>
-      <.icon name="hero-server-solid"/>
-      {node}
-      </li>
-      <% end %>
+        <%= for node <- @nodes do %>
+          <li>
+            <.icon name="hero-server-solid" />
+            {node}
+          </li>
+        <% end %>
       </ul>
     </div>
     """
   end
 
   def mount(_params, _session, socket) do
-
     nodes = Node.list()
     # Initial list of servers
     servers = [
