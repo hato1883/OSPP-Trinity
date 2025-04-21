@@ -3,15 +3,16 @@ defmodule HelloWeb.AdminLive do
 
   def render(assigns) do
     ~H"""
-    Current temperature: {@temperature} °C <button phx-click="inc_temperature">+</button>
-    <button phx-click="dec_temperature">-</button>
+    Current temperature: {@temperature} °C
+    <.button phx-click="inc_temperature">+</.button>
+    <.button phx-click="dec_temperature">-</.button>
 
-    <button phx-click="nice">69</button>
+    <.button phx-click="nice">51</.button>
 
-    <button phx-click="random">random</button>
+    <.button phx-click="random">random</.button>
 
     <p>How about this: {@request}</p>
-    <button phx-click="request">request</button>
+    <.button phx-click="request">request</.button>
 
     <h3>Running Servers</h3>
     <div style="height: 150px; overflow-y: auto; border: 1px solid #ccc; margin-top: 10px; padding: 5px;">
@@ -23,7 +24,6 @@ defmodule HelloWeb.AdminLive do
           </li>
         <% end %>
       </ul>
-
     </div>
     Nodes
     <div style="height: 150px; overflow-y: auto; border: 1px solid #ccc; margin-top: 10px; padding: 5px;">
@@ -35,13 +35,17 @@ defmodule HelloWeb.AdminLive do
           </li>
         <% end %>
       </ul>
-      </div>
+    </div>
+
+    <div style="height: 150px; overflow-y: auto; border: 1px solid #ccc; margin-top: 10px; padding: 5px;">
+      Random data {@random}
+    </div>
     """
   end
 
   def mount(_params, _session, socket) do
     # nodes = Node.list()
-nodes = [
+    nodes = [
       %{name: "Placeholder node 1", status: "Unknown"},
       %{name: "Placeholder node 2", status: "Unknown"},
       %{name: "Placeholder node 3", status: "Unknown"},
@@ -56,14 +60,24 @@ nodes = [
       %{name: "Placeholder server 4", status: "Unknown"}
     ]
 
+    random = :rand.uniform(20)
+
     socket =
       socket
       |> assign(:temperature, 70)
       |> assign(:request, "RARAREQUEST")
       |> assign(:servers, servers)
       |> assign(:nodes, nodes)
+      |> assign(:random, random)
 
     {:ok, socket}
+  end
+
+  def handle_info(msg, socket) do
+    case msg do
+      _ ->
+        {:noreply, update(socket, :random, &(&1 - &1 + :rand.uniform(100)))}
+    end
   end
 
   def handle_info(%{event: "server_update", payload: server_update}, socket) do
@@ -88,7 +102,7 @@ nodes = [
         {:noreply, update(socket, :temperature, &(&1 - 1))}
 
       "nice" ->
-        {:noreply, update(socket, :temperature, fn _ -> 69 end)}
+        {:noreply, update(socket, :temperature, fn _ -> 51 end)}
 
       "random" ->
         {:noreply, update(socket, :temperature, fn _ -> :rand.uniform(100) end)}
