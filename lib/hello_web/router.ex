@@ -30,8 +30,7 @@ defmodule HelloWeb.Router do
 
     get "/hello", HelloController, :index
     get "/hello/:messenger", HelloController, :show
-    get "/admin", AdminController, :index
-    live "/thermostat",ThermostatLive
+    live "/admin", AdminLive
   end
 
   # Other scopes may use custom stacks.

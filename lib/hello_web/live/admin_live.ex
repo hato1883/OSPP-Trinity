@@ -1,4 +1,4 @@
-defmodule HelloWeb.ThermostatLive do
+defmodule HelloWeb.AdminLive do
   use HelloWeb, :live_view
 
   def render(assigns) do
