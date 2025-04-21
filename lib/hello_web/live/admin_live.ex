@@ -25,20 +25,27 @@ defmodule HelloWeb.AdminLive do
           </li>
         <% end %>
       </ul>
+      <ul>
+      <%= for node <- @nodes do %>
+      <li>
+      <.icon name="hero-server-solid"/>
+      {node}
+      </li>
+      <% end %>
+      </ul>
     </div>
     """
   end
 
   def mount(_params, _session, socket) do
-    # Example list of servers
-    PubSub.subscribe(HelloWeb.PubSub, "servers:updates")
 
+    nodes = Node.list()
     # Initial list of servers
     servers = [
-      %{name: "Server 1", status: "Unknown"},
-      %{name: "Server 2", status: "Unknown"},
-      %{name: "Server 3", status: "Unknown"},
-      %{name: "Server 4", status: "Unknown"}
+      %{name: "Placeholder server 1", status: "Unknown"},
+      %{name: "Placeholder server 2", status: "Unknown"},
+      %{name: "Placeholder server 3", status: "Unknown"},
+      %{name: "Placeholder server 4", status: "Unknown"}
     ]
 
     socket =
@@ -46,6 +53,7 @@ defmodule HelloWeb.AdminLive do
       |> assign(:temperature, 70)
       |> assign(:request, "RARAREQUEST")
       |> assign(:servers, servers)
+      |> assign(:nodes, nodes)
 
     {:ok, socket}
   end
