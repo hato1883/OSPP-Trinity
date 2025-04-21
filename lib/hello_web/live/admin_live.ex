@@ -23,20 +23,31 @@ defmodule HelloWeb.AdminLive do
           </li>
         <% end %>
       </ul>
+
+    </div>
+    Nodes
+    <div style="height: 150px; overflow-y: auto; border: 1px solid #ccc; margin-top: 10px; padding: 5px;">
       <ul>
         <%= for node <- @nodes do %>
           <li>
-            <.icon name="hero-server-solid" />
-            {node}
+            <.icon name="hero-moon-solid" />
+            {node.name} - Status: {node.status}
           </li>
         <% end %>
       </ul>
-    </div>
+      </div>
     """
   end
 
   def mount(_params, _session, socket) do
-    nodes = Node.list()
+    # nodes = Node.list()
+nodes = [
+      %{name: "Placeholder node 1", status: "Unknown"},
+      %{name: "Placeholder node 2", status: "Unknown"},
+      %{name: "Placeholder node 3", status: "Unknown"},
+      %{name: "Placeholder node 4", status: "Unknown"}
+    ]
+
     # Initial list of servers
     servers = [
       %{name: "Placeholder server 1", status: "Unknown"},
