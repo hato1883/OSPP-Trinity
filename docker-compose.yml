@@ -11,6 +11,7 @@ services:
     build: ./load-balancer/
     ports:
       - 8080:80
+      - 9000:9000
     volumes:
       # bind haproxy.cfg to the container
       - type: bind
