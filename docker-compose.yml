@@ -1,19 +1,35 @@
-version: '3.2'
+name: HARALD
 services:
   db:
+    container_name: db
     image: postgres:17
     environment:
      - POSTGRES_HOST_AUTH_METHOD=trust
 
-  web:
-    build: ./website-application
-    volumes:
-      - type: bind
-        source: ./website-application
-        target: /app
+  lb:
+    container_name: lb
+    build: ./load-balancer/
     ports:
       - 8080:80
-      - 8081:443
+      - 9000:9000
+    volumes:
+      # bind haproxy.cfg to the container
+      - type: bind
+        source: ./load-balancer/haproxy.cfg
+        target: /usr/local/etc/haproxy/haproxy.cfg
+    depends_on:
+      - node-1
+      - node-2
+
+  node-1:
+    container_name: node-1
+    build: ./website-application/
+    volumes:
+      - type: bind
+        source: ./website-application/
+        target: /app
+    # ports:
+    #   - 8081:80
     environment:
       # Modify your config files (dev.exs and test.exs) so that the password and hostname can be overridden
       # when environment variables are set:
@@ -21,6 +37,33 @@ services:
       # hostname: System.get_env("DB_HOST", "localhost"),
       - DB_PASS=
       - DB_HOST=db
+      - ERLANG_COOKIE=HARALD
+      - NODE_NAME=node-1
+    depends_on:
+      - db
+    command:
+      - ./run.sh
+    # deploy:
+    #   replicas: 2
+
+  node-2:
+    container_name: node-2
+    build: ./website-application/
+    volumes:
+      - type: bind
+        source: ./website-application/
+        target: /app
+    # ports:
+    #   - 8081:80
+    environment:
+      # Modify your config files (dev.exs and test.exs) so that the password and hostname can be overridden
+      # when environment variables are set:
+      # password: System.get_env("DB_PASS", "postgres"),
+      # hostname: System.get_env("DB_HOST", "localhost"),
+      - DB_PASS=
+      - DB_HOST=db
+      - ERLANG_COOKIE=HARALD
+      - NODE_NAME=node-2
     depends_on:
       - db
     command: ["./run.sh"]
