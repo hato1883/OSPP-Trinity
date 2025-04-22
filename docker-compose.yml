@@ -66,5 +66,4 @@ services:
       - NODE_NAME=node-2
     depends_on:
       - db
-    command:
-      - ./run.sh
+    command: ["./run.sh"]

@@ -38,7 +38,7 @@ defmodule HelloWeb.Router do
       pipe_through :browser
 
       live_dashboard "/dashboard", metrics: HelloWeb.Telemetry
-      forward "/mailbox", Plug.Swoosh.MailboxPreview
+      forward "/mailbox", Plug.Swoosh.MailboxPreview, request_logger: true
     end
   end
 end
