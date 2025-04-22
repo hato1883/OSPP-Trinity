@@ -14,8 +14,6 @@ To run the attacker simply input: `elixir attack_token.ex` into the terminal whi
 
 ## Modules
 
-### `Attacker`
-A simple module with a `hello/0` function for demonstration purposes.
 
 ### `JsonGenerator`
 Generates large JSON files with random data.
