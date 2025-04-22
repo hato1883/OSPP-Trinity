@@ -36,7 +36,7 @@ defmodule GetRequest do
 
   def localhost_get_req(iteration) do
 
-    Req.get("http://192.168.47.237:8080/?ip=#{iteration}")
+    Req.get("http://localhost:8080/?ip=#{iteration}")
     # IO.puts("Request made!")
     # IO.puts("Waiting for 1 second(s)...")
     # :timer.sleep(1000)
@@ -83,4 +83,4 @@ end
 # GetRequest.localhost()
 GetRequest.requester_loop(0)
 GetRequest.print_wait()
-Process.sleep(20000)
+Process.sleep(50000)
