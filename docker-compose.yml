@@ -20,6 +20,29 @@ services:
     depends_on:
       - node-1
       - node-2
+  
+  dashboard:
+    container_name: dashboard
+    image: grafana/grafana-oss:11.6.0
+    ports:
+      - 3000:3000
+    volumes:
+      - ./dashboard:/var/lib/grafana
+    depends_on:
+      - metrics
+  
+  metrics:
+    container_name: metrics
+    image: prom/prometheus:v2.53.4
+    ports:
+      - 9090:9090
+    volumes:
+      # bind prometheus.yml to the container
+      - type: bind
+        source: ./admin/prometheus.yml
+        target: /etc/prometheus/prometheus.yml
+    depends_on:
+      - lb
 
   node-1:
     container_name: node-1
