@@ -2,6 +2,9 @@
 
 The `attacker-application` is a utility designed for testing and generating HTTP requests, as well as creating large JSON payloads for stress testing or other purposes. It includes modules for making GET and POST requests, generating JSON files, and interacting with external APIs.
 
+# How to run
+To run the attacker simply input: `elixir attack_token.ex` into the terminal while in the /lib directory. 
+
 ## Features
 
 - **HTTP Requests**: Perform GET and POST requests to specified endpoints.
