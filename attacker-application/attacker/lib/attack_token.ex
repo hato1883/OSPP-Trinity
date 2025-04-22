@@ -52,7 +52,7 @@ defmodule GetRequest do
     GetRequest.localhost_post_req(data)
   end
 
-  def requester_loop(iteration) when iteration < 40 do
+  def requester_loop(iteration) when iteration < 20 do
     spawn(fn -> localhost_get(iteration) end)
     IO.puts("Requester made")
     requester_loop(iteration + 1)
