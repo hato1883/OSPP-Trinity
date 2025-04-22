@@ -4,7 +4,6 @@
 
 set -e
 
-
 # Ensure the app's dependencies are installed
 mix deps.get
 
@@ -51,4 +50,5 @@ mix test
 
 echo "\n Launching Phoenix web server..."
 # Start the phoenix web server
-mix phx.server
+echo "connect to: web@$HOSTNAME with cookie: $ERLANG_COOKIE"
+elixir --sname web --cookie $ERLANG_COOKIE -S mix phx.server
