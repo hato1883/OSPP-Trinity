@@ -45,6 +45,7 @@ defmodule HelloWeb.AdminLive do
 
   def mount(_params, _session, socket) do
     # nodes = Node.list()
+   
     nodes = [
       %{name: "Placeholder node 1", status: "Unknown"},
       %{name: "Placeholder node 2", status: "Unknown"},
@@ -65,7 +66,7 @@ defmodule HelloWeb.AdminLive do
     socket =
       socket
       |> assign(:temperature, 70)
-      |> assign(:request, "RARAREQUEST")
+      |> assign(:request, "Request")
       |> assign(:servers, servers)
       |> assign(:nodes, nodes)
       |> assign(:random, random)
