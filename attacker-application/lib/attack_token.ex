@@ -1,8 +1,11 @@
 Mix.install([:req, :floki])
 
-defmodule GetRequest do
+import GetRequest
+
+defmodule GetRequestToken do
   def hello do
     IO.puts("Hello, World!")
+    GetRequest.hello()
   end
 
   def weather do
@@ -75,12 +78,12 @@ defmodule GetRequest do
   end
 end
 
-#  GetRequest.hello()
+ GetRequestToken.hello()
 
-# GetRequest.testing()
-# GetRequest.weather()
-# GetRequest.localhost_uptime()
-# GetRequest.localhost()
-GetRequest.requester_loop(0)
-GetRequest.print_wait()
-Process.sleep(20000)
+# GetRequestToken.testing()
+# GetRequestToken.weather()
+# GetRequestToken.localhost_uptime()
+# GetRequestToken.localhost()
+# GetRequestToken.requester_loop(0)
+# GetRequestToken.print_wait()
+# Process.sleep(20000)
