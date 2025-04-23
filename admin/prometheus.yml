@@ -16,7 +16,7 @@ runtime:
   gogc: 42
 
 scrape_configs:
-  - job_name: prometheus
+  - job_name: Prometheus
 
     honor_labels: true
     # scrape_interval is defined by the configured global (15s).
@@ -34,9 +34,21 @@ scrape_configs:
     tls_config:
       min_version: TLS10
 
-  - job_name: 'load-balancer-metrics'
+  - job_name: 'HAProxy'
     static_configs:
       - targets: ['lb:8405']
+
+  - job_name: Postgres
+    static_configs:
+      - targets: ["db-export:9187"]
+
+  - job_name: Node-1
+    static_configs:
+      - targets: ["node-1:80"]
+
+  - job_name: Node-2
+    static_configs:
+      - targets: ["node-2:80"]
 
 
 storage:
