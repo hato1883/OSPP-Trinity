@@ -16,14 +16,7 @@ defmodule HelloWeb.AdminLive do
 
     <h3>Running Servers</h3>
     <div style="height: 150px; overflow-y: auto; border: 1px solid #ccc; margin-top: 10px; padding: 5px;">
-      <ul>
-        <%= for server <- @servers do %>
-          <li>
-            <.icon name="hero-server-solid" />
-            {server.name} - Status: {server.status}
-          </li>
-        <% end %>
-      </ul>
+      <ul id="server-list"></ul>
     </div>
     Nodes
     <div style="height: 150px; overflow-y: auto; border: 1px solid #ccc; margin-top: 10px; padding: 5px;">
@@ -45,7 +38,7 @@ defmodule HelloWeb.AdminLive do
 
   def mount(_params, _session, socket) do
     # nodes = Node.list()
-   
+
     nodes = [
       %{name: "Placeholder node 1", status: "Unknown"},
       %{name: "Placeholder node 2", status: "Unknown"},
@@ -54,12 +47,12 @@ defmodule HelloWeb.AdminLive do
     ]
 
     # Initial list of servers
-    servers = [
-      %{name: "Placeholder server 1", status: "Unknown"},
-      %{name: "Placeholder server 2", status: "Unknown"},
-      %{name: "Placeholder server 3", status: "Unknown"},
-      %{name: "Placeholder server 4", status: "Unknown"}
-    ]
+    # servers = [
+    #   %{name: "Placeholder server 1", status: "Unknown"},
+    #   %{name: "Placeholder server 2", status: "Unknown"},
+    #   %{name: "Placeholder server 3", status: "Unknown"},
+    #   %{name: "Placeholder server 4", status: "Unknown"}
+    # ]
 
     random = :rand.uniform(20)
 
@@ -67,7 +60,7 @@ defmodule HelloWeb.AdminLive do
       socket
       |> assign(:temperature, 70)
       |> assign(:request, "Request")
-      |> assign(:servers, servers)
+      # |> assign(:servers, servers)
       |> assign(:nodes, nodes)
       |> assign(:random, random)
 

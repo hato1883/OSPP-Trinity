@@ -16,6 +16,7 @@ defmodule Hello.Application do
       {Finch, name: Hello.Finch},
       # Start a worker by calling: Hello.Worker.start_link(arg)
       # {Hello.Worker, arg},
+      HelloWeb.UpdateListener,
       # Start to serve requests, typically the last entry
       HelloWeb.Endpoint
     ]
