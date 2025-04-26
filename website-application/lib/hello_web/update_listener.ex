@@ -9,20 +9,24 @@ defmodule HelloWeb.UpdateListener do
   end
 
   def start_link() do
-    pid = Process.spawn(fn -> loop() end, [])
+    pid = Process.spawn(fn -> loop(%{}) end, [])
     Logger.info("Update Listener started")
-    Logger.info(Node.self())
     Process.register(pid, :server_listener)
     {:ok, pid}
   end
 
-  def loop() do
+  def loop(server_map) do
     receive do
-      {:server_update, msg} ->
+      {:server_update, %{id: id, name: name, status: status}} ->
         Logger.info("Update received")
-        HelloWeb.Endpoint.broadcast("servers", "update", msg)
-    end
 
-    loop()
+        new_server_map = Map.put(server_map, id, %{name: name, status: status})
+
+        HelloWeb.Endpoint.broadcast("servers", "server-update", new_server_map)
+        loop(new_server_map)
+
+      _ ->
+        loop(server_map)
+    end
   end
 end

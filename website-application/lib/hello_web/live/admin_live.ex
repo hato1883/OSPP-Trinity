@@ -1,5 +1,6 @@
 defmodule HelloWeb.AdminLive do
   use HelloWeb, :live_view
+  require Logger
 
   def render(assigns) do
     ~H"""
@@ -16,15 +17,22 @@ defmodule HelloWeb.AdminLive do
 
     <h3>Running Servers</h3>
     <div style="height: 150px; overflow-y: auto; border: 1px solid #ccc; margin-top: 10px; padding: 5px;">
-      <ul id="server-list"></ul>
+      <ul id="server-list">
+        <%= for {id, server} <- assigns.servers do %>
+          <li id={"server-" <> Integer.to_string(id)}>
+            <.icon name="hero-server-solid" />
+            {server.name} - status: {server.status}
+          </li>
+        <% end %>
+      </ul>
     </div>
     Nodes
     <div style="height: 150px; overflow-y: auto; border: 1px solid #ccc; margin-top: 10px; padding: 5px;">
       <ul>
-        <%= for node <- @nodes do %>
+        <%= for {id, status} <- @nodes do %>
           <li>
             <.icon name="hero-moon-solid" />
-            {node.name} - Status: {node.status}
+            {id} - Status: {status}
           </li>
         <% end %>
       </ul>
@@ -39,12 +47,12 @@ defmodule HelloWeb.AdminLive do
   def mount(_params, _session, socket) do
     # nodes = Node.list()
 
-    nodes = [
-      %{name: "Placeholder node 1", status: "Unknown"},
-      %{name: "Placeholder node 2", status: "Unknown"},
-      %{name: "Placeholder node 3", status: "Unknown"},
-      %{name: "Placeholder node 4", status: "Unknown"}
-    ]
+    # nodes = [
+    #   %{name: "Placeholder node 1", status: "Unknown"},
+    #   %{name: "Placeholder node 2", status: "Unknown"},
+    #   %{name: "Placeholder node 3", status: "Unknown"},
+    #   %{name: "Placeholder node 4", status: "Unknown"}
+    # ]
 
     # Initial list of servers
     # servers = [
@@ -60,14 +68,32 @@ defmodule HelloWeb.AdminLive do
       socket
       |> assign(:temperature, 70)
       |> assign(:request, "Request")
-      # |> assign(:servers, servers)
-      |> assign(:nodes, nodes)
+      |> assign(:servers, %{})
+      |> assign(:nodes, %{})
       |> assign(:random, random)
+
+    HelloWeb.Endpoint.subscribe("servers")
+    HelloWeb.Endpoint.subscribe("nodes")
 
     {:ok, socket}
   end
 
+  def handle_info(%{event: "server-update", payload: server_map}, socket) do
+    Logger.info("handle_info server-update invoked")
+    Logger.info(server_map)
+    {:noreply, assign(socket, servers: server_map)}
+  end
+
+  def handle_info(%{event: "node-update", payload: node_map}, socket) do
+    Logger.info("handle_info node-update invoked")
+    Logger.info(node_map)
+    {:noreply, assign(socket, nodes: node_map)}
+  end
+
   def handle_info(msg, socket) do
+    Logger.info("handle_info wildcard invoked")
+    Logger.info(msg)
+
     case msg do
       _ ->
         {:noreply, update(socket, :random, &(&1 - &1 + :rand.uniform(100)))}
