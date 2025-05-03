@@ -21,10 +21,6 @@ defmodule GetRequestToken do
     # IO.inspect(lines)
     IO.puts(uptime)
   end
-  def localhost_get(iteration) do
-    IO.puts("Request loop started...")
-    GetRequestToken.localhost_get_req(iteration)
-  end
 
   def localhost_post do
     IO.puts("Request loop started...")
@@ -33,22 +29,32 @@ defmodule GetRequestToken do
     GetRequestToken.localhost_post_req(data)
   end
 
-  def localhost_get_req(iteration) do
+  def localhost_post_req(data) do
+    Req.post("http://192.168.47.237:8080/?ip=abcd",
+    json: data
+    )
+    # IO.puts("Done!")
+    GetRequestToken.localhost_post_req(data)
+  end
 
-    Req.get("http://localhost:8080/?ip=#{iteration}")
+  def localhost_get(iteration) do
+    IO.puts("Request loop started...")
+    GetRequestToken.localhost_get_req(iteration)
+  end
+
+  def localhost_get_req(iteration) do
+    # IO.puts("Request loop started...")
+    first = Enum.random(0..255)
+    second = Enum.random(0..255)
+    third = Enum.random(0..255)
+    fourth = Enum.random(0..255)
+    # IO.puts("#{lol}")
+    Req.get("http://localhost:8080/?ip=#{first}.#{second}.#{third}.#{fourth}")
     # IO.puts("Request made!")
     # IO.puts("Waiting for 1 second(s)...")
     # :timer.sleep(1000)
     # IO.puts("Done!")
     GetRequestToken.localhost_get_req(iteration + 1)
-  end
-
-  def localhost_post_req(data) do
-    Req.post("http://192.168.47.237:8080/?ip=abcd",
-        json: data
-        )
-    # IO.puts("Done!")
-    GetRequestToken.localhost_post_req(data)
   end
 
   def requester_loop(iteration) when iteration < 20 do
@@ -69,16 +75,6 @@ defmodule GetRequestToken do
       other -> IO.puts("Error, invalid argument: #{inspect(other)}\nShould be [local | remote]")
     end
   end
-
-  def testing do
-    # {:ok, _} = Application.ensure_all_started(:req)
-    response = Req.get!("https://www.google.com")
-    IO.inspect(response.headers, label: "Headers")
-    IO.puts("Waiting for 2 seconds...")
-    :timer.sleep(2000)
-    IO.puts("Done!")
-    GetRequestToken.testing()
-  end
 end
 
 #  GetRequestToken.hello()
@@ -87,9 +83,9 @@ end
 # GetRequestToken.weather()
 # GetRequestToken.localhost_uptime()
 # GetRequestToken.localhost()
-# GetRequestToken.requester_loop(0)
-# GetRequestToken.print_wait()
-# Process.sleep(20000)
-[ argument | _ ] = System.argv()
+GetRequestToken.requester_loop(0)
+GetRequestToken.print_wait()
+Process.sleep(20000)
+# [ argument | _ ] = System.argv()
 # GetRequest.print(argument)
-GetRequestToken.switch(argument)
+# GetRequestToken.switch(argument)
