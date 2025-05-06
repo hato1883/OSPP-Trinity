@@ -57,5 +57,14 @@ defmodule HelloWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
+
+  plug :set_custom_headers
+
+  defp set_custom_headers(conn,_opts) do
+    conn
+    |> put_resp_header("cache-control", "max-age=0, private, no-store")
+
+  end
   plug HelloWeb.Router
+
 end
