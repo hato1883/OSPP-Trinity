@@ -62,9 +62,10 @@ defmodule HelloWeb.Endpoint do
 
   defp set_custom_headers(conn,_opts) do
     conn
-    |> put_resp_header("cache-control", "max-age=0, private, no-store")
+    |> put_resp_header("cache-control", "max-age=0, private, no-store, must-revalidate")
 
   end
+
   plug HelloWeb.Router
 
 end
