@@ -1,5 +1,5 @@
 defmodule HelloWeb.InfoDump do
-  # Connect
+  # Connect to nodes using ERLANG:s BEAM
   # Promex
 
 
