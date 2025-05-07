@@ -28,8 +28,8 @@ services:
       - type: bind
         source: ./website-application/
         target: /app
-    # ports:
-    #   - 8081:80
+    ports:
+      - 8081:80
     environment:
       # Modify your config files (dev.exs and test.exs) so that the password and hostname can be overridden
       # when environment variables are set:
