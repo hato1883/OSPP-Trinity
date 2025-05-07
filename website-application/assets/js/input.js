@@ -1,4 +1,5 @@
 
+const targetInput = document.getElementById("target-input");
 const workersInput = document.getElementById("workers-input");
 const requestsInput = document.getElementById("requests-input");
 const startBtn = document.getElementById("start-btn");
@@ -12,11 +13,12 @@ startBtn.addEventListener("click", async (event) => {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
+                target: targetInput.value,
                 workers: parseInt(workersInput.value),
                 requests: parseInt(requestsInput.value)
             })
         }
     )
-    .then(response => response.json())
-    .then(data => console.log(data));
+        .then(response => response.json())
+        .then(data => console.log(data));
 })

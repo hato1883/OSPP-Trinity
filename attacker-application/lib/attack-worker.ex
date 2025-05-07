@@ -12,10 +12,8 @@ defmodule AttackWorker do
 
   defp loop(target, request_count) do
     Req.get(target)
-    Logger.info("#{inspect self()} - Request complete")
-    Process.sleep(1000)
+    Logger.info("#{inspect(self())} - Request complete")
+    Process.sleep(5000)
     loop(target, request_count - 1)
   end
-
-
 end

@@ -16,36 +16,59 @@ defmodule AttackCoordinator do
   defp start() do
     Process.register(self(), :attack_coordinator)
     Logger.info("Attack coordinator started")
-    loop([])
+    loop(%{})
   end
 
   defp loop(subscribed_attackers) do
     receive do
-      {:subscribe, node, pid} ->
-        Logger.info("Attacker subscribed: #{inspect node}, #{inspect pid}")
-        HelloWeb.Endpoint.broadcast("attacker", "subscribed", %{node: node, pid: pid})
-        loop([{node, pid} | subscribed_attackers])
+      {:subscribe, node} ->
+        Logger.info("Attacker subscribed: #{inspect(node)}")
 
-      {:attack_update, node, pid, active_workers} ->
-        Logger.info("Update received from #{inspect node} with #{active_workers} active workers")
-        HelloWeb.Endpoint.broadcast("attacker", "active-update", %{node: node, pid: pid, active: active_workers})
+        updated_attackers = Map.put(subscribed_attackers, node, 0)
+        HelloWeb.Endpoint.broadcast("attacker", "attacker_list_update", updated_attackers)
+        loop(updated_attackers)
+
+      {:attack_update, node, active_workers} ->
+        Logger.info("Update received from #{inspect(node)} with #{active_workers} active workers")
+
+        updated_attackers = Map.put(subscribed_attackers, node, active_workers)
+
+        HelloWeb.Endpoint.broadcast("attacker", "attacker_list_update", updated_attackers)
+
+        loop(updated_attackers)
 
       {:start_attack, workers, target, requests} ->
-        start_attack(subscribed_attackers, workers, target, requests)
+        Logger.info("Starting attack on: ~n#{inspect(subscribed_attackers)}")
+
+        for {node, _workers} <- subscribed_attackers do
+          start_attack(node, workers, target, requests)
+        end
+
+        loop(subscribed_attackers)
+
+      {:node_down, disconnected_node} ->
+        remaining_attackers =
+          Map.filter(
+            subscribed_attackers,
+            fn {node, _} -> node != disconnected_node end
+          )
+
+        HelloWeb.Endpoint.broadcast("attacker", "attacker_list_update", remaining_attackers)
+
+        loop(remaining_attackers)
+
+      {:get_attackers, from} ->
+        send(from, {:attacker_list, subscribed_attackers})
+        loop(subscribed_attackers)
 
       msg ->
-        Logger.info("Unhandled message received: #{inspect msg}")
+        Logger.info("Unhandled message received: #{inspect(msg)}")
+        loop(subscribed_attackers)
     end
-
-    loop(subscribed_attackers)
   end
 
-  defp start_attack([], _workers, _target, _requests) do
-    :ok
-  end
-
-  defp start_attack([{node, pid} | subscribed_attackers], workers, target, requests) do
-    send({node, pid}, {:start, workers, target, requests})
-    start_attack(subscribed_attackers, workers, target, requests)
+  defp start_attack(node, workers, target, requests) do
+    send({:attack_supervisor, node}, {:start, workers, target, requests})
+    # start_attack(subscribed_attackers, workers, target, requests)
   end
 end

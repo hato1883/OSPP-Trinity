@@ -18,6 +18,7 @@ defmodule Hello.Application do
       # {Hello.Worker, arg},
       # Start to serve requests, typically the last entry
       AttackCoordinator,
+      NodeMonitor,
       HelloWeb.Endpoint
     ]
 

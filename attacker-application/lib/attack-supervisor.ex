@@ -9,11 +9,11 @@ defmodule AttackSupervisor do
 
   defp start(node) do
     Process.flag(:trap_exit, true)
-    send({:attack_coordinator, node}, {:subscribe, Node.self, self()})
-    Logger.info("Subscription sent to #{inspect node}")
+    Process.register(self(), :attack_supervisor)
+    send({:attack_coordinator, node}, {:subscribe, Node.self()})
+    Logger.info("Subscription sent to #{inspect(node)}")
     loop(false, 0, {:attack_coordinator, node})
   end
-
 
   defp start_workers(0, _, _) do
     :ok
@@ -35,25 +35,25 @@ defmodule AttackSupervisor do
 
   defp loop(processing, active_workers, coordinator) do
     receive do
-
       {:EXIT, _from, :normal} ->
-        send(coordinator, {:attack_update, Node.self, self(), active_workers - 1})
+        send(coordinator, {:attack_update, Node.self(), active_workers - 1})
         loop(processing, active_workers - 1, coordinator)
 
       {:EXIT, _from, reason} ->
         Logger.info("Worker terminated: #{reason}")
-        send(coordinator, {:attack_update, Node.self, self(), active_workers - 1})
+        send(coordinator, {:attack_update, Node.self(), active_workers - 1})
         loop(processing, active_workers - 1, coordinator)
 
       {:start, worker_count, target, request_count} ->
-        Logger.info("Worker count: #{worker_count}")
+        Logger.info("#{inspect(self())} Worker count: #{worker_count}")
+
         if processing do
           send(coordinator, {:error, :processing})
           loop(processing, active_workers, coordinator)
         else
           case start_workers(worker_count, target, request_count) do
             :ok ->
-              send(coordinator, {:attack_update, Node.self, self(), worker_count})
+              send(coordinator, {:attack_update, Node.self(), worker_count})
               loop(true, worker_count, coordinator)
 
             {:error, reason} ->
@@ -68,9 +68,9 @@ defmodule AttackSupervisor do
     end
   end
 
-
   def start(worker_count, target, request_count) do
     send(:attack_supervisor, {:start, self(), worker_count, target, request_count})
+
     receive do
       :ok ->
         :ok
