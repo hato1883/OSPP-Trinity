@@ -30,6 +30,7 @@ services:
     ports:
       - 8080:80
       - 9000:9000
+      - 8405:8405
     volumes:
       # bind haproxy.cfg to the container
       - type: bind
@@ -84,9 +85,9 @@ services:
       - NODE_NAME=node-1
     healthcheck:
       test: ["CMD", "curl", "-f", "http://node-1/health"]
-      interval: 500s
-      timeout: 200s
-      retries: 10
+      interval: 5s
+      timeout: 2s
+      retries: 100
       start_period: 30s
     depends_on:
       db:
@@ -116,9 +117,9 @@ services:
       - NODE_NAME=node-2
     healthcheck:
       test: ["CMD", "curl", "-f", "http://node-2/health"]
-      interval: 500s
-      timeout: 200s
-      retries: 10
+      interval: 5s
+      timeout: 2s
+      retries: 100
       start_period: 30s
     depends_on:
       db:

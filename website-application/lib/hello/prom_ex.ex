@@ -62,10 +62,10 @@ defmodule Hello.PromEx do
       # PromEx built in plugins
       Plugins.Application,
       Plugins.Beam,
-      {Plugins.Phoenix, router: HelloWeb.Router, endpoint: HelloWeb.Endpoint},
+      {PromEx.Plugins.Phoenix, endpoint: HelloWeb.Endpoint, router: HelloWeb.Router},
       Plugins.Ecto,
-      # Plugins.Oban,
       Plugins.PhoenixLiveView,
+      # Plugins.Oban,
       # Plugins.Absinthe,
       # Plugins.Broadway,
 

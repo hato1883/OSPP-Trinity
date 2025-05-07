@@ -1,13 +1,14 @@
 # my global config
 global:
-  scrape_interval: 1s
-  evaluation_interval: 10s
+  scrape_interval: 5s
+  scrape_timeout: 1s
+  evaluation_interval: 5s
   body_size_limit: 15MB
-  sample_limit: 1500
-  target_limit: 30
-  label_limit: 30
-  label_name_length_limit: 200
-  label_value_length_limit: 200
+  sample_limit: 0
+  target_limit: 0
+  label_limit: 0
+  label_name_length_limit: 0
+  label_value_length_limit: 0
   query_log_file: query.log
   # scrape_timeout is set to the global default (10s).
 
@@ -27,9 +28,6 @@ scrape_configs:
 
     static_configs:
       - targets: ["localhost:9090"]
-        labels:
-          my: label
-          your: label
 
     tls_config:
       min_version: TLS10
@@ -37,19 +35,16 @@ scrape_configs:
   - job_name: 'HAProxy'
     static_configs:
       - targets: ['lb:8405']
+    params: 
+      extra-counters: ["on"]
 
   - job_name: Postgres
     static_configs:
       - targets: ["db-export:9187"]
 
-  - job_name: Node-1
+  - job_name: Node
     static_configs:
-      - targets: ["node-1:80"]
-
-  - job_name: Node-2
-    static_configs:
-      - targets: ["node-2:80"]
-
+      - targets: ["node-1:80", "node-2:80"]
 
 storage:
   tsdb:
