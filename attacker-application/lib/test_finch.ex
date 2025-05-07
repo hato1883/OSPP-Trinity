@@ -2,7 +2,7 @@ Mix.install([:finch, :floki])
 
 defmodule TestFinch do
   def start do
-    Finch.start_link(name: MyFinch)
+    Finch.start_link(name: MyFinch, pools: %{default: [size: 50]})
   end
 
   def get_request(url) do
@@ -10,21 +10,16 @@ defmodule TestFinch do
     |> Finch.request(MyFinch)
   end
 
-  def get_request_with_headers(url, headers) do
-    Finch.build(:get, url, headers)
-    |> Finch.request(MyFinch)
-  end
-
-  def requester_loop(iteration) when iteration < 1050 do
+  def requester_loop(iteration) when iteration < 1550 do
     spawn(fn -> localhost_get(iteration) end)
-    IO.puts("Requester made")
+    # IO.puts("Requester made")
     requester_loop(iteration + 1)
   end
 
   def requester_loop(_iteration), do: :ok
 
   def localhost_get(iteration) do
-    IO.puts("Request loop started...")
+    # IO.puts("Request loop started...")
     TestFinch.localhost_get_req(iteration)
   end
 
@@ -49,11 +44,11 @@ defmodule TestFinch do
 
 end
 
-# 👇 Start the Finch pool
+
 {:ok, _pid} = TestFinch.start()
 TestFinch.requester_loop(0)
 Process.sleep(20000)
-# 👇 Make a GET request
+
 # case TestFinch.get_request("https://wttr.in/?format=3") do
 #   {:ok, response} ->
 #     # IO.inspect(response.status, label: "Status")
