@@ -2,15 +2,16 @@ defmodule AttackSupervisor do
   require AttackWorker
   require Logger
 
-  def start_link do
-    pid = spawn_link(fn -> start() end)
+  def start_link(node) do
+    pid = spawn_link(fn -> start(node) end)
     {:ok, pid}
   end
 
-  defp start() do
-    Process.register(self(), :attack_supervisor)
+  defp start(node) do
     Process.flag(:trap_exit, true)
-    loop(false, 0)
+    send({:attack_coordinator, node}, {:subscribe, Node.self, self()})
+    Logger.info("Subscription sent to #{inspect node}")
+    loop(false, 0, {:attack_coordinator, node})
   end
 
 
@@ -28,44 +29,42 @@ defmodule AttackSupervisor do
     start_workers(worker_count - 1, target, request_count)
   end
 
-  defp loop(true, 0) do
-    loop(false, 0)
+  defp loop(true, 0, coordinator) do
+    loop(false, 0, coordinator)
   end
 
-  defp loop(processing, active_workers) do
+  defp loop(processing, active_workers, coordinator) do
     receive do
 
       {:EXIT, _from, :normal} ->
-        loop(processing, active_workers - 1)
+        send(coordinator, {:attack_update, Node.self, self(), active_workers - 1})
+        loop(processing, active_workers - 1, coordinator)
 
       {:EXIT, _from, reason} ->
         Logger.info("Worker terminated: #{reason}")
-        loop(processing, active_workers - 1)
+        send(coordinator, {:attack_update, Node.self, self(), active_workers - 1})
+        loop(processing, active_workers - 1, coordinator)
 
-      {:start, from, worker_count, target, request_count} ->
+      {:start, worker_count, target, request_count} ->
         Logger.info("Worker count: #{worker_count}")
         if processing do
-          send(from, {:error, :processing})
-          loop(processing, active_workers)
+          send(coordinator, {:error, :processing})
+          loop(processing, active_workers, coordinator)
         else
           case start_workers(worker_count, target, request_count) do
             :ok ->
-              send(from, :ok)
-              loop(true, worker_count)
+              send(coordinator, {:attack_update, Node.self, self(), worker_count})
+              loop(true, worker_count, coordinator)
 
             {:error, reason} ->
-              send(from, {:error, reason})
-              loop(processing, 0)
+              send(coordinator, {:error, reason})
+              loop(processing, 0, coordinator)
           end
         end
 
-      {:worker_count, from} ->
-        send(from, {:worker_count, active_workers})
-        loop(processing, active_workers)
-
       msg ->
         Logger.info("Unhandled message: #{msg}")
-        loop(processing, active_workers)
+        loop(processing, active_workers, coordinator)
     end
   end
 
@@ -78,14 +77,6 @@ defmodule AttackSupervisor do
 
       {:error, reason} ->
         {:error, reason}
-    end
-  end
-
-  def active_workers() do
-    send(:attack_supervisor, {:worker_count, self()})
-    receive do
-      {:worker_count, active_workers} ->
-        active_workers
     end
   end
 end

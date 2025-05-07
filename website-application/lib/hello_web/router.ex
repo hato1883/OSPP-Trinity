@@ -12,6 +12,8 @@ defmodule HelloWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+
+    post "/attack/start", HelloWeb.AttackController, :start
   end
 
   scope "/", HelloWeb do
