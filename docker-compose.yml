@@ -89,8 +89,7 @@ services:
       timeout: 2s
       retries: 100
       start_period: 30s
-    restart:
-      on-failure: 5
+    restart: unless-stopped
     depends_on:
       db:
         condition: service_healthy
@@ -123,8 +122,7 @@ services:
       timeout: 2s
       retries: 100
       start_period: 30s
-    restart:
-      on-failure: 5
+    restart: unless-stopped
     depends_on:
       db:
         condition: service_healthy
