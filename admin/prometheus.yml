@@ -1,6 +1,6 @@
 # my global config
 global:
-  scrape_interval: 5s
+  scrape_interval: 1s
   scrape_timeout: 1s
   evaluation_interval: 5s
   body_size_limit: 15MB
