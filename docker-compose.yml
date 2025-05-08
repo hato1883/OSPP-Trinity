@@ -5,6 +5,24 @@ services:
     image: postgres:17
     environment:
      - POSTGRES_HOST_AUTH_METHOD=trust
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  db-export:
+    container_name: db-export
+    image: prometheuscommunity/postgres-exporter
+    ports:
+      - 9187:9187
+    environment:
+     - DATA_SOURCE_NAME=postgresql://postgres@db:5432/postgres?sslmode=disable
+    depends_on:
+      db:
+        condition: service_healthy
+      metrics:
+        condition: service_started
 
   lb:
     container_name: lb
@@ -12,14 +30,40 @@ services:
     ports:
       - 8080:80
       - 9000:9000
+      - 8405:8405
     volumes:
       # bind haproxy.cfg to the container
       - type: bind
         source: ./load-balancer/haproxy.cfg
         target: /usr/local/etc/haproxy/haproxy.cfg
     depends_on:
-      - node-1
-      - node-2
+      node-1:
+        condition: service_healthy
+      node-2:
+        condition: service_healthy
+  
+  dashboard:
+    container_name: dashboard
+    image: grafana/grafana-oss:11.6.0
+    ports:
+      - 3000:3000
+    volumes:
+      - ./dashboard:/var/lib/grafana
+    depends_on:
+      - metrics
+  
+  metrics:
+    container_name: metrics
+    image: prom/prometheus:v2.53.4
+    ports:
+      - 9090:9090
+    volumes:
+      # bind prometheus.yml to the container
+      - type: bind
+        source: ./admin/prometheus.yml
+        target: /etc/prometheus/prometheus.yml
+    depends_on:
+      - lb
 
   node-1:
     container_name: node-1
@@ -39,8 +83,16 @@ services:
       - DB_HOST=db
       - ERLANG_COOKIE=HARALD
       - NODE_NAME=node-1
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://node-1/health"]
+      interval: 5s
+      timeout: 2s
+      retries: 100
+      start_period: 30s
+    restart: unless-stopped
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     command:
       - ./run.sh
     # deploy:
@@ -64,6 +116,14 @@ services:
       - DB_HOST=db
       - ERLANG_COOKIE=HARALD
       - NODE_NAME=node-2
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://node-2/health"]
+      interval: 5s
+      timeout: 2s
+      retries: 100
+      start_period: 30s
+    restart: unless-stopped
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     command: ["./run.sh"]
