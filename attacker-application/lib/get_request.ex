@@ -59,7 +59,7 @@ defmodule GetRequest do
 
   def requester_loop(_iteration), do: :ok
 
-  def print(msg) do 
+  def print(msg) do
     IO.puts(msg)
   end
 

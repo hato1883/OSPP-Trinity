@@ -38,6 +38,14 @@ defmodule HelloWeb.Endpoint do
     param_key: "request_logger",
     cookie_key: "request_logger"
 
+  # Prometheus metrics
+  plug PromEx.Plug,
+    prom_ex_module: Hello.PromEx,
+    metrics_path: "/metrics",
+    metrics_options: [prom_ex_module: Hello.PromEx]
+
+  plug HelloWeb.Plug.HealthCheck
+
   plug Plug.RequestId
   plug Plug.Telemetry, event_prefix: [:phoenix, :endpoint]
 
@@ -49,12 +57,15 @@ defmodule HelloWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
+
   plug :set_custom_headers
 
   defp set_custom_headers(conn,_opts) do
     conn
-    |> put_resp_header("cache-control", "max-age=0, private, no-store")
+    |> put_resp_header("cache-control", "max-age=0, private, no-store, must-revalidate")
 
   end
+
   plug HelloWeb.Router
+
 end
