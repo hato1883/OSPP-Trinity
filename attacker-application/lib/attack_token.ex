@@ -37,28 +37,33 @@ defmodule GetRequestToken do
     GetRequestToken.localhost_post_req(data)
   end
 
-  def localhost_get(iteration) do
+  def localhost_get() do
     IO.puts("Request loop started...")
-    GetRequestToken.localhost_get_req(iteration)
+    GetRequestToken.localhost_get_req()
   end
 
-  def localhost_get_req(iteration) do
+  # def localhost_finch do
+  #   children = [
+  #     {Finch, name: MyFinch}
+  #   ]
+  # end
+
+  def localhost_get_req() do
     # IO.puts("Request loop started...")
     first = Enum.random(0..255)
     second = Enum.random(0..255)
     third = Enum.random(0..255)
     fourth = Enum.random(0..255)
-    # IO.puts("#{lol}")
     Req.get("http://localhost:8080/?ip=#{first}.#{second}.#{third}.#{fourth}")
     # IO.puts("Request made!")
     # IO.puts("Waiting for 1 second(s)...")
     # :timer.sleep(1000)
     # IO.puts("Done!")
-    GetRequestToken.localhost_get_req(iteration + 1)
+    GetRequestToken.localhost_get_req()
   end
 
   def requester_loop(iteration) when iteration < 20 do
-    spawn(fn -> localhost_get(iteration) end)
+    spawn(fn -> localhost_get() end)
     IO.puts("Requester made")
     requester_loop(iteration + 1)
   end
@@ -70,7 +75,7 @@ defmodule GetRequestToken do
   end
   def switch(case_var) do
     case case_var do
-      "local" -> localhost_get(10)
+      "local" -> localhost_get()
       "remote" -> localhost_post()
       other -> IO.puts("Error, invalid argument: #{inspect(other)}\nShould be [local | remote]")
     end
