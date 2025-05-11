@@ -1,5 +1,6 @@
 defmodule HelloWeb.AttackLive do
   use HelloWeb, :live_view
+  require Logger
 
   def mount(_params, _session, socket) do
     HelloWeb.Endpoint.subscribe("attacker")
@@ -8,25 +9,25 @@ defmodule HelloWeb.AttackLive do
 
     receive do
       {:attacker_list, attackers} ->
-        {:ok, assign(socket, attackers: attackers)}
+        {:ok, assign(socket, attackers: attackers, form: to_form(%{"target" => "http://localhost", "workers" => 1, "requests" => 1}))}
     after
       500 ->
-        {:ok, assign(socket, attackers: %{})}
+        {:ok, assign(socket, attackers: %{}, form: to_form(%{"target" => "http://localhost", "workers" => 1, "requests" => 1}))}
     end
   end
 
   def render(assigns) do
     ~H"""
       <section>
-        <div class="grid grid-cols-2 gap-3">
+        <.form for={@form} class="grid grid-cols-2 gap-3" phx-submit="start">
             <label class="self-center">Target address</label>
-            <input id="target-input" type="text" />
+            <.input id="target-input" type="text" field={@form[:target]} />
             <label class="self-center">Workers</label>
-            <input id="workers-input" type="number" />
+            <.input id="workers-input" type="number" field={@form[:workers]}/>
             <label class="self-center">Requests</label>
-            <input id="requests-input" type="number" />
-          <.button id="start-btn" >Start</.button>
-        </div>
+            <.input id="requests-input" type="number" field={@form[:requests]}/>
+            <.button id="start-btn" class="col-span-2 self-center" >Start</.button>
+        </.form>
       </section>
 
       <h3 class="flex justify-center text-xl mt-12">Connected nodes</h3>
@@ -57,5 +58,20 @@ defmodule HelloWeb.AttackLive do
 
   def handle_info(%{event: "attacker_list_update", payload: attackers}, socket) do
     {:noreply, assign(socket, attackers: attackers)}
+  end
+
+  def handle_event("start", %{"target" => target, "workers" => workers, "requests" => requests}, socket) do
+
+    Logger.info("Start: #{workers} workers, #{requests}")
+
+    send(:attack_coordinator, {:start_attack, String.to_integer(workers), target, String.to_integer(requests)})
+
+    {:noreply, socket}
+  end
+
+  def handle_event(event, params, socket) do
+    Logger.info("Unhandled event: #{event}~nWith parameters: #{inspect params}")
+
+    {:noreply, socket}
   end
 end

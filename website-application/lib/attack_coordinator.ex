@@ -38,7 +38,7 @@ defmodule AttackCoordinator do
         loop(updated_attackers)
 
       {:start_attack, workers, target, requests} ->
-        Logger.info("Starting attack on: ~n#{inspect(subscribed_attackers)}")
+        Logger.info("Starting attack on: \n#{inspect(subscribed_attackers)}")
 
         for {node, _workers} <- subscribed_attackers do
           start_attack(node, workers, target, requests)
