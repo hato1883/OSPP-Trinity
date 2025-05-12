@@ -9,10 +9,32 @@ defmodule HelloWeb.AttackLive do
 
     receive do
       {:attacker_list, attackers} ->
-        {:ok, assign(socket, attackers: attackers, form: to_form(%{"target" => "http://localhost", "workers" => 1, "requests" => 1}))}
+        {:ok,
+         assign(socket,
+           attackers: attackers,
+           form:
+             to_form(%{
+               "target" => "http://localhost",
+               "workers" => 1,
+               "requests" => 1,
+               "method" => "GET",
+               "attack_type" => :volumetric
+             })
+         )}
     after
       500 ->
-        {:ok, assign(socket, attackers: %{}, form: to_form(%{"target" => "http://localhost", "workers" => 1, "requests" => 1}))}
+        {:ok,
+         assign(socket,
+           attackers: %{},
+           form:
+             to_form(%{
+               "target" => "http://localhost",
+               "workers" => 1,
+               "requests" => 1,
+               "method" => "GET",
+               "attack_type" => :volumetric
+             })
+         )}
     end
   end
 
@@ -20,12 +42,22 @@ defmodule HelloWeb.AttackLive do
     ~H"""
       <section>
         <.form for={@form} class="grid grid-cols-2 gap-3" phx-submit="start">
-            <label class="self-center">Target address</label>
+            <label class="self-center" data-tooltip="Tooltip">Target address</label>
             <.input id="target-input" type="text" field={@form[:target]} />
             <label class="self-center">Workers</label>
             <.input id="workers-input" type="number" field={@form[:workers]}/>
             <label class="self-center">Requests</label>
             <.input id="requests-input" type="number" field={@form[:requests]}/>
+            <label class="self-center">Method</label>
+            <select id="method-select" name="method">
+              <option value="GET">GET</option>
+              <option value="POST">POST</option>
+            </select>
+            <label class="self-center">Attack Type</label>
+            <select id="attack-type-select" name="attack_type">
+              <option value="volumetric">Volumetric</option>
+              <option value="slowloris">Slowloris</option>
+            </select>
             <.button id="start-btn" class="col-span-2 self-center" >Start</.button>
         </.form>
       </section>
@@ -34,7 +66,7 @@ defmodule HelloWeb.AttackLive do
 
       <ul>
         <%= for {node, workers} <- @attackers do %>
-          <li class="grid grid-cols-2 gap-3 my-8 bg-gray-200 p-6">
+          <li class="grid grid-cols-2 gap-3 my-1 bg-gray-200 p-6">
             <label>Node:</label>
             <label>{ inspect node}</label>
             <label>Active workers:</label>
@@ -60,17 +92,30 @@ defmodule HelloWeb.AttackLive do
     {:noreply, assign(socket, attackers: attackers)}
   end
 
-  def handle_event("start", %{"target" => target, "workers" => workers, "requests" => requests}, socket) do
+  def handle_event(
+        "start",
+        %{
+          "target" => target,
+          "workers" => workers,
+          "requests" => requests,
+          "method" => method,
+          "attack_type" => attack_type
+        },
+        socket
+      ) do
+    Logger.info("Start: #{workers} workers, #{requests} ")
 
-    Logger.info("Start: #{workers} workers, #{requests}")
-
-    send(:attack_coordinator, {:start_attack, String.to_integer(workers), target, String.to_integer(requests)})
+    send(
+      :attack_coordinator,
+      {:start_attack, String.to_integer(workers), target, String.to_integer(requests), method,
+       attack_type}
+    )
 
     {:noreply, socket}
   end
 
   def handle_event(event, params, socket) do
-    Logger.info("Unhandled event: #{event}~nWith parameters: #{inspect params}")
+    Logger.info("Unhandled event: #{event}\nWith parameters: #{inspect(params)}")
 
     {:noreply, socket}
   end

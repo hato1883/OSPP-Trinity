@@ -2,12 +2,16 @@ defmodule AttackApplication do
   use Application
   require AttackSupervisor
 
+  # Application module to enable the attack supervisor module to be started with mix run
+
   @impl true
   def start(_type, _args) do
     children = [
       %{
         id: AttackSupervisor,
-        start: {AttackSupervisor, :start_link, [:web@e573c4267773]}
+        # Start the attack supervisor with the argument :web@hostname where hostname is the first command line argument
+        start:
+          {AttackSupervisor, :start_link, [String.to_atom("web@" <> List.first(System.argv()))]}
       }
     ]
 
