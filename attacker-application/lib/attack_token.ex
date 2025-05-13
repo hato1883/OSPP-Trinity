@@ -14,10 +14,14 @@ defmodule GetRequestToken do
     third = Enum.random(0..255)
     fourth = Enum.random(0..255)
     Req.get("http://localhost:8080/?ip=#{first}.#{second}.#{third}.#{fourth}")
+    # IO.puts("Request made!")
+    # IO.puts("Waiting for 1 second(s)...")
+    # :timer.sleep(1000)
+    # IO.puts("Done!")
     GetRequestToken.localhost_get_req()
   end
 
-  def requester_loop(iteration) when iteration < 20 do
+  def requester_loop(iteration) when iteration < 250 do
     spawn(fn -> localhost_get() end)
     IO.puts("Requester made")
     requester_loop(iteration + 1)
