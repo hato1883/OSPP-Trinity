@@ -14,8 +14,6 @@ To run the attacker simply input: `elixir attack_token.ex` into the terminal whi
 
 ## Modules
 
-### `Attacker`
-A simple module with a `hello/0` function for demonstration purposes.
 
 ### `JsonGenerator`
 Generates large JSON files with random data.
@@ -36,4 +34,17 @@ GetRequest.perform("https://api.example.com/data")
 ### `attack_token`
 Same as `get_request` but uses token or "IP" to identify each individual client.
 
+## Slowloris
+
+### How to run
+
+## Preparations
+Before running the program edit the second to last line in the program to set your preferences.
+```
+SlowLoris.start("https://api.exameple.com", <port>, <amount of concurrent requests>, <time in milliseconds inbetween each request>)
+```
+Note: Amount of concurrent requests maxes out at around 250 000 requests in its current state.
+
+## Finally
+To run the slowloris attack simply input: `elixir slowloris.ex` into the terminal while in the /lib directory. 
 
