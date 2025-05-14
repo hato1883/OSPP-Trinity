@@ -1,16 +1,24 @@
 defmodule AttackWorker do
   require Logger
+  import SlowLoris
+  import Volumetric
 
   # Worker module for attacks.
 
   # Spawns the worker process and links it to the calling process
   def start_link(attack_type, target_address, target_port, transmission_interval) do
-    spawn_link(fn -> loop(attack_type, target_address, target_port, transmission_interval) end)
+    case attack_type do
+      "volumetric" ->
+        socket = :none
+      "slowloris" ->
+        socket = SlowLoris.start_connection(target_address, target_port)
+    end
+    spawn_link(fn -> loop(attack_type, target_address, target_port, transmission_interval, socket) end)
   end
 
 
   # Loops indefinitely and performs requests until a stop message is received
-  defp loop(attack_type, target_address, target_port, transmission_interval) do
+  defp loop(attack_type, target_address, target_port, transmission_interval, socket) do
     case attack_type do
       "volumetric" ->
         # Replace with actual volumetric attack
@@ -19,7 +27,7 @@ defmodule AttackWorker do
 
       "slowloris" ->
         # Replace with actual slowloris attack
-        do_slowloris(target_address, target_port, transmission_interval)
+        do_slowloris(socket)
         Process.sleep(:rand.uniform(5) * 1000)
 
       end
@@ -41,12 +49,13 @@ defmodule AttackWorker do
     if :rand.uniform(5) == 5 do
       Process.exit(self(), "Random termination")
     end
-
-    Logger.info("#{inspect(self())} - Volumetric complete")
+    Volumetric.send_request(_target_address, _target_port)
+    Logger.info("#{inspect(self())} - Volumetric request complete")
   end
 
-  defp do_slowloris(_target_address, _target_port, _transmission_interval) do
-    Logger.info("#{inspect(self())} - Slowloris complete")
+  defp do_slowloris(socket) do
+    SlowLoris.send_header(socket)
+    Logger.info("#{inspect(self())} - Slowloris request complete")
   end
 
   def stop(pid) do
