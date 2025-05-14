@@ -8,6 +8,7 @@ defmodule Hello.Application do
   @impl true
   def start(_type, _args) do
     children = [
+      Hello.PromEx,
       HelloWeb.Telemetry,
       Hello.Repo,
       {DNSCluster, query: Application.get_env(:hello, :dns_cluster_query) || :ignore},

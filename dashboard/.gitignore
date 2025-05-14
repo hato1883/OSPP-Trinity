@@ -1,0 +1,6 @@
+# ignore all sub folders in plugins/ folder
+plugins/*
+plugins/**/*
+png/
+pdf/
+csv/
