@@ -1,8 +1,3 @@
-#parameters
-ip = "192.168.3.2"
-port = 8080
-connections = 2
-
 defmodule Volumetric do
   require Logger
   def send_request(target, port) do
@@ -21,7 +16,3 @@ defmodule Volumetric do
 
   end
 end
-Volumetric.start(ip, port, connections)
-# Volumetric.start("127.0.0.1", 8080, 2)
-
-:timer.sleep(:infinity)

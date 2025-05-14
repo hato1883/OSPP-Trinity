@@ -21,6 +21,4 @@ defmodule SlowLoris do
   end
 end
 
-SlowLoris.start("127.0.0.1", 8080, 500000, 2000)
-
 :timer.sleep(:infinity)
