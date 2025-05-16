@@ -34,6 +34,6 @@ defmodule GetRequestToken do
   end
 end
 
-GetRequestToken.requester_loop(0)
-GetRequestToken.print_wait()
-Process.sleep(20000)
+# GetRequestToken.requester_loop(0)
+# GetRequestToken.print_wait()
+# Process.sleep(20000)

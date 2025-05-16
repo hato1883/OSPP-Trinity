@@ -78,7 +78,7 @@ defmodule HelloWeb.AttackLive do
                     <%= if @stopping do %>
                         <button phx-click="stop" disabled="true" class="bg-gray-400 p-3  rounded-md text-white font-semibold">Stop</button>
                     <% else %>
-                        <button phx-click="stop" class="bg-black hover:bg-gray-400 p-3  rounded-md text-white font-semibold">Stop</button>
+                        <button phx-click="stop" class="bg-black hover:bg-gray-400 p-3  rounded-md text-white font-semibold" type="button">Stop</button>
                     <% end %>
                 <% else %>
                     <button id="start-btn" class="bg-black hover:bg-gray-600 p-3 rounded-md text-white font-semibold">Start</button>
@@ -107,7 +107,7 @@ defmodule HelloWeb.AttackLive do
                     <%= if @stopping do %>
                         <button phx-click="stop" disabled="true" class="bg-gray-400 p-3  rounded-md text-white font-semibold">Stop</button>
                     <% else %>
-                        <button phx-click="stop" class="bg-black hover:bg-gray-400 p-3  rounded-md text-white font-semibold">Stop</button>
+                        <button phx-click="stop" class="bg-black hover:bg-gray-400 p-3  rounded-md text-white font-semibold" type="button">Stop</button>
                     <% end %>
                 <% else %>
                     <button id="start-btn" class="bg-black hover:bg-gray-600 p-3 rounded-md text-white font-semibold">Start</button>
