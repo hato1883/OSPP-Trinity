@@ -11,6 +11,13 @@ else
     HOSTNAME=$1
 fi
 
-RAND_NAME=$(mktemp -u XXXXXX | tr '[:upper:]' '[:lower:]')
+# RAND_NAME=$(mktemp -u XXXXXX | tr '[:upper:]' '[:lower:]')
+
+RAND_NAME=""
+chars=abcdefghijklmnopqrstuvxyz
+
+for i in {1..6} ; do
+    RAND_NAME=$RAND_NAME"${chars:RANDOM%${#chars}:1}"
+done
 
 iex --sname $RAND_NAME --cookie HARALD -S mix run -- $HOSTNAME
