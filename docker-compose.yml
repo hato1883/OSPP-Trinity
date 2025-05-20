@@ -18,11 +18,11 @@ services:
       - 9187:9187
     environment:
      - DATA_SOURCE_NAME=postgresql://postgres@db:5432/postgres?sslmode=disable
-    depends_on:
-      db:
-        condition: service_healthy
-      metrics:
-        condition: service_started
+    # depends_on:
+    #   db:
+    #     condition: service_healthy
+    #   metrics:
+    #     condition: service_started
 
   lb:
     container_name: lb
@@ -36,11 +36,11 @@ services:
       - type: bind
         source: ./load-balancer/haproxy.cfg
         target: /usr/local/etc/haproxy/haproxy.cfg
-    depends_on:
-      node-1:
-        condition: service_healthy
-      node-2:
-        condition: service_healthy
+    # depends_on:
+    #   node-1:
+    #     condition: service_healthy
+    #   node-2:
+    #     condition: service_healthy
   
   dashboard:
     container_name: dashboard
@@ -49,8 +49,8 @@ services:
       - 3000:3000
     volumes:
       - ./dashboard:/var/lib/grafana
-    depends_on:
-      - metrics
+    # depends_on:
+    #   - metrics
   
   metrics:
     container_name: metrics
@@ -62,8 +62,8 @@ services:
       - type: bind
         source: ./admin/prometheus.yml
         target: /etc/prometheus/prometheus.yml
-    depends_on:
-      - lb
+    # depends_on:
+    #   - lb
 
   node-1:
     container_name: node-1
@@ -72,15 +72,15 @@ services:
       - type: bind
         source: ./website-application/
         target: /app
-    # ports:
-    #   - 8081:80
+    ports:
+      - 80:80
     environment:
       # Modify your config files (dev.exs and test.exs) so that the password and hostname can be overridden
       # when environment variables are set:
       # password: System.get_env("DB_PASS", "postgres"),
       # hostname: System.get_env("DB_HOST", "localhost"),
       - DB_PASS=
-      - DB_HOST=db
+      - DB_HOST=192.168.0.100
       - ERLANG_COOKIE=HARALD
       - NODE_NAME=node-1
     healthcheck:
@@ -90,9 +90,9 @@ services:
       retries: 100
       start_period: 30s
     restart: unless-stopped
-    depends_on:
-      db:
-        condition: service_healthy
+    # xdepends_on:
+    #   db:
+    #     condition: service_healthy
     command:
       - ./run.sh
     # deploy:
@@ -123,7 +123,7 @@ services:
       retries: 100
       start_period: 30s
     restart: unless-stopped
-    depends_on:
-      db:
-        condition: service_healthy
+    # depends_on:
+    #   db:
+    #     condition: service_healthy
     command: ["./run.sh"]

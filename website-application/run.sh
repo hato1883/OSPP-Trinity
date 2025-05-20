@@ -5,7 +5,7 @@
 set -e
 
 # Ensure the app's dependencies are installed
-mix deps.get
+# mix deps.get
 
 # Prepare Dialyzer if the project has Dialyxer set up
 if mix help dialyzer >/dev/null 2>&1
@@ -23,7 +23,7 @@ fi
 
 # Wait for Postgres to become available.
 >&2 echo "psql --host=db --port=5432 --username=postgres -c '\q'"
-until psql --host=db --port=5432 --username=postgres -c '\q'; do
+until psql --host=192.168.0.100 --port=5432 --username=postgres -c '\q'; do
   >&2 echo "Postgres is unavailable - sleeping"
   sleep 1
 done
