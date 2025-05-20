@@ -1,6 +1,6 @@
-Mix.install([:req, :floki])
+# # Mix.install([:req, :floki])
 
-# import GetRequestToken
+# # import GetRequestToken
 
 defmodule GetRequestToken do
   def localhost_get() do
@@ -27,13 +27,13 @@ defmodule GetRequestToken do
     requester_loop(iteration + 1)
   end
 
-  def requester_loop(_iteration), do: :ok
+#   def requester_loop(_iteration), do: :ok
 
   def print_wait do
     IO.puts("Wait for 20 seconds!")
   end
 end
 
-GetRequestToken.requester_loop(0)
-GetRequestToken.print_wait()
-Process.sleep(20000)
+# GetRequestToken.requester_loop(0)
+# GetRequestToken.print_wait()
+# Process.sleep(20000)

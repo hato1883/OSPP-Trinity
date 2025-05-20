@@ -18,6 +18,8 @@ defmodule Hello.Application do
       # Start a worker by calling: Hello.Worker.start_link(arg)
       # {Hello.Worker, arg},
       # Start to serve requests, typically the last entry
+      AttackCoordinator,
+      NodeMonitor,
       HelloWeb.Endpoint
     ]
 
