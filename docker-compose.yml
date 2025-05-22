@@ -80,7 +80,7 @@ services:
       # password: System.get_env("DB_PASS", "postgres"),
       # hostname: System.get_env("DB_HOST", "localhost"),
       - DB_PASS=
-      - DB_HOST=192.168.0.100
+      - DB_HOST=130.243.159.217
       - ERLANG_COOKIE=HARALD
       - NODE_NAME=node-1
     healthcheck:
