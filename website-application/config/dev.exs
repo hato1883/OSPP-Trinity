@@ -4,7 +4,7 @@ import Config
 config :hello, Hello.Repo,
   username: "postgres",
   password: "",
-  hostname: "130.243.159.217",
+  hostname: "192.168.0.102",
   database: "hello_dev",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
