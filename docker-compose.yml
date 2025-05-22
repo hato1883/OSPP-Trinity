@@ -62,8 +62,8 @@ services:
       - type: bind
         source: ./admin/prometheus.yml
         target: /etc/prometheus/prometheus.yml
-    depends_on:
-      - lb
+    # depends_on:
+    #   - lb
 
   node-1:
     container_name: node-1
@@ -72,8 +72,11 @@ services:
       - type: bind
         source: ./website-application/
         target: /app
-    # ports:
-    #   - 8081:80
+      - type: bind
+        source: ./attacker-application/
+        target: /attacker
+    ports:
+      - 8081:80
     environment:
       # Modify your config files (dev.exs and test.exs) so that the password and hostname can be overridden
       # when environment variables are set:
@@ -105,6 +108,9 @@ services:
       - type: bind
         source: ./website-application/
         target: /app
+      - type: bind
+        source: ./attacker-application/
+        target: /attacker
     # ports:
     #   - 8081:80
     environment:

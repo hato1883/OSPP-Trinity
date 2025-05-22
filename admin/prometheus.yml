@@ -34,17 +34,17 @@ scrape_configs:
 
   - job_name: 'HAProxy'
     static_configs:
-      - targets: ['lb:8405']
+      - targets: ['192.168.0.105:8405']
     params: 
       extra-counters: ["on"]
 
   - job_name: Postgres
     static_configs:
-      - targets: ["db-export:9187"]
+      - targets: ["192.168.0.102:9187"]
 
   - job_name: Node
     static_configs:
-      - targets: ["node-1:80", "node-2:80"]
+      - targets: ["192.168.0.101:80", "192.168.0.100:80"]
 
 storage:
   tsdb:
