@@ -1,0 +1,380 @@
+
+20_May_2025_13_28_18:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    5.33%     249.8MiB / 3.642GiB   6.70%     3.38MB / 3.15MB   0B / 6.85MB   99
+
+20_May_2025_13_28_20:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    3.26%     249.7MiB / 3.642GiB   6.70%     3.38MB / 3.15MB   0B / 6.85MB   99
+
+20_May_2025_13_28_22:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    8.83%     249.1MiB / 3.642GiB   6.68%     3.38MB / 3.15MB   0B / 6.86MB   99
+
+20_May_2025_13_28_24:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    4.23%     249.1MiB / 3.642GiB   6.68%     3.38MB / 3.16MB   0B / 6.86MB   99
+
+20_May_2025_13_28_26:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    10.44%    250.7MiB / 3.642GiB   6.72%     3.38MB / 3.16MB   0B / 6.86MB   99
+
+20_May_2025_13_28_28:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    4.57%     249.5MiB / 3.642GiB   6.69%     3.39MB / 3.16MB   0B / 6.86MB   99
+
+20_May_2025_13_28_30:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    3.44%     249.7MiB / 3.642GiB   6.70%     3.39MB / 3.16MB   0B / 6.86MB   99
+
+20_May_2025_13_28_32:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    12.50%    250.6MiB / 3.642GiB   6.72%     3.39MB / 3.16MB   0B / 6.87MB   99
+
+20_May_2025_13_28_34:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    5.15%     249.7MiB / 3.642GiB   6.70%     3.39MB / 3.16MB   0B / 6.87MB   99
+
+20_May_2025_13_28_36:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    4.46%     249MiB / 3.642GiB   6.68%     3.39MB / 3.16MB   0B / 6.87MB   99
+
+20_May_2025_13_28_38:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    4.62%     249.4MiB / 3.642GiB   6.69%     3.39MB / 3.17MB   0B / 6.88MB   99
+
+20_May_2025_13_28_40:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    4.44%     249.2MiB / 3.642GiB   6.68%     3.39MB / 3.17MB   0B / 6.88MB   99
+
+20_May_2025_13_28_42:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O     PIDS
+9e189b2a02fd   node-1    15.47%    249.9MiB / 3.642GiB   6.70%     3.4MB / 3.17MB   0B / 6.89MB   99
+
+20_May_2025_13_28_44:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O     PIDS
+9e189b2a02fd   node-1    4.65%     249.6MiB / 3.642GiB   6.69%     3.4MB / 3.17MB   0B / 6.89MB   99
+
+20_May_2025_13_28_46:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O     PIDS
+9e189b2a02fd   node-1    3.85%     249.7MiB / 3.642GiB   6.70%     3.4MB / 3.17MB   0B / 6.89MB   99
+
+20_May_2025_13_28_48:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O    PIDS
+9e189b2a02fd   node-1    5.06%     249.8MiB / 3.642GiB   6.70%     3.4MB / 3.17MB   0B / 6.9MB   99
+
+20_May_2025_13_28_50:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O          BLOCK I/O    PIDS
+9e189b2a02fd   node-1    3.83%     250MiB / 3.642GiB   6.70%     3.4MB / 3.17MB   0B / 6.9MB   99
+
+20_May_2025_13_28_52:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O          BLOCK I/O     PIDS
+9e189b2a02fd   node-1    16.65%    250MiB / 3.642GiB   6.70%     3.4MB / 3.18MB   0B / 6.91MB   99
+
+20_May_2025_13_28_54:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O     PIDS
+9e189b2a02fd   node-1    4.05%     249.9MiB / 3.642GiB   6.70%     3.4MB / 3.18MB   0B / 6.91MB   99
+
+20_May_2025_13_28_56:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    4.42%     250.8MiB / 3.642GiB   6.72%     3.41MB / 3.18MB   0B / 6.91MB   99
+
+20_May_2025_13_28_58:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    3.47%     249.7MiB / 3.642GiB   6.70%     3.41MB / 3.18MB   0B / 6.91MB   99
+
+20_May_2025_13_29_00:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    3.64%     249.4MiB / 3.642GiB   6.69%     3.41MB / 3.18MB   0B / 6.91MB   99
+
+20_May_2025_13_29_02:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    19.66%    250.4MiB / 3.642GiB   6.72%     3.41MB / 3.18MB   0B / 6.92MB   99
+
+20_May_2025_13_29_04:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    4.73%     249.8MiB / 3.642GiB   6.70%     3.41MB / 3.19MB   0B / 6.92MB   99
+
+20_May_2025_13_29_06:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    4.91%     249.8MiB / 3.642GiB   6.70%     3.41MB / 3.19MB   0B / 6.92MB   99
+
+20_May_2025_13_29_08:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    6.12%     250MiB / 3.642GiB   6.70%     3.42MB / 3.19MB   0B / 6.93MB   99
+
+20_May_2025_13_29_10:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    4.29%     249.8MiB / 3.642GiB   6.70%     3.42MB / 3.19MB   0B / 6.93MB   99
+
+20_May_2025_13_29_12:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    11.82%    250.1MiB / 3.642GiB   6.71%     3.42MB / 3.19MB   0B / 6.93MB   99
+
+20_May_2025_13_29_14:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    4.64%     249.4MiB / 3.642GiB   6.69%     3.42MB / 3.19MB   0B / 6.94MB   99
+
+20_May_2025_13_29_16:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    4.01%     249.9MiB / 3.642GiB   6.70%     3.42MB / 3.19MB   0B / 6.94MB   99
+
+20_May_2025_13_29_18:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O     PIDS
+9e189b2a02fd   node-1    11.52%    249.9MiB / 3.642GiB   6.70%     3.42MB / 3.2MB   0B / 6.95MB   99
+
+20_May_2025_13_29_20:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O     PIDS
+9e189b2a02fd   node-1    4.23%     249.6MiB / 3.642GiB   6.69%     3.42MB / 3.2MB   0B / 6.95MB   99
+
+20_May_2025_13_29_22:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O     PIDS
+9e189b2a02fd   node-1    9.95%     249.8MiB / 3.642GiB   6.70%     3.43MB / 3.2MB   0B / 6.95MB   99
+
+20_May_2025_13_29_24:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O     PIDS
+9e189b2a02fd   node-1    4.17%     250.1MiB / 3.642GiB   6.71%     3.43MB / 3.2MB   0B / 6.96MB   99
+
+20_May_2025_13_29_26:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O          BLOCK I/O     PIDS
+9e189b2a02fd   node-1    6.78%     252MiB / 3.642GiB   6.76%     3.43MB / 3.2MB   0B / 6.96MB   99
+
+20_May_2025_13_29_28:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O     PIDS
+9e189b2a02fd   node-1    13.05%    250.9MiB / 3.642GiB   6.73%     3.43MB / 3.2MB   0B / 6.96MB   99
+
+20_May_2025_13_29_30:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O     PIDS
+9e189b2a02fd   node-1    3.74%     250.3MiB / 3.642GiB   6.71%     3.43MB / 3.2MB   0B / 6.96MB   99
+
+20_May_2025_13_29_32:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    11.20%    250.1MiB / 3.642GiB   6.71%     3.43MB / 3.21MB   0B / 6.96MB   99
+
+20_May_2025_13_29_34:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    6.50%     250.1MiB / 3.642GiB   6.71%     3.44MB / 3.21MB   0B / 6.97MB   99
+
+20_May_2025_13_29_36:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    4.17%     249.5MiB / 3.642GiB   6.69%     3.44MB / 3.21MB   0B / 6.97MB   99
+
+20_May_2025_13_29_38:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    4.22%     249.4MiB / 3.642GiB   6.69%     3.44MB / 3.21MB   0B / 6.97MB   99
+
+20_May_2025_13_29_40:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    4.43%     249.5MiB / 3.642GiB   6.69%     3.44MB / 3.21MB   0B / 6.98MB   99
+
+20_May_2025_13_29_42:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    11.75%    250.2MiB / 3.642GiB   6.71%     3.44MB / 3.21MB   0B / 6.98MB   99
+
+20_May_2025_13_29_44:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    9.94%     250.3MiB / 3.642GiB   6.71%     3.44MB / 3.21MB   0B / 6.99MB   99
+
+20_May_2025_13_29_46:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    3.91%     250.1MiB / 3.642GiB   6.71%     3.44MB / 3.22MB   0B / 6.99MB   99
+
+20_May_2025_13_29_48:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    5.53%     249.3MiB / 3.642GiB   6.69%     3.45MB / 3.22MB   0B / 6.99MB   99
+
+20_May_2025_13_29_50:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+9e189b2a02fd   node-1    4.14%     249.2MiB / 3.642GiB   6.68%     3.45MB / 3.22MB   0B / 7MB    99
+
+20_May_2025_13_29_52:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+9e189b2a02fd   node-1    13.53%    249.6MiB / 3.642GiB   6.69%     3.45MB / 3.22MB   0B / 7MB    99
+
+20_May_2025_13_29_54:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+9e189b2a02fd   node-1    11.29%    249.5MiB / 3.642GiB   6.69%     3.45MB / 3.22MB   0B / 7MB    99
+
+20_May_2025_13_29_56:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+9e189b2a02fd   node-1    5.84%     249.2MiB / 3.642GiB   6.68%     3.45MB / 3.22MB   0B / 7MB    99
+
+20_May_2025_13_29_58:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+9e189b2a02fd   node-1    5.48%     249.7MiB / 3.642GiB   6.69%     3.45MB / 3.22MB   0B / 7MB    99
+
+20_May_2025_13_30_00:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    4.30%     249.8MiB / 3.642GiB   6.70%     3.45MB / 3.23MB   0B / 7.01MB   99
+
+20_May_2025_13_30_02:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    10.54%    249.7MiB / 3.642GiB   6.70%     3.46MB / 3.23MB   0B / 7.01MB   99
+
+20_May_2025_13_30_04:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    11.42%    250MiB / 3.642GiB   6.70%     3.46MB / 3.23MB   0B / 7.02MB   99
+
+20_May_2025_13_30_06:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    4.38%     250.5MiB / 3.642GiB   6.72%     3.46MB / 3.23MB   0B / 7.02MB   99
+
+20_May_2025_13_30_08:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    4.40%     250MiB / 3.642GiB   6.70%     3.46MB / 3.23MB   0B / 7.02MB   99
+
+20_May_2025_13_30_10:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    8.45%     249.9MiB / 3.642GiB   6.70%     3.46MB / 3.23MB   0B / 7.03MB   99
+
+20_May_2025_13_30_12:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    19.01%    249.9MiB / 3.642GiB   6.70%     3.46MB / 3.23MB   0B / 7.03MB   99
+
+20_May_2025_13_30_14:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    3.30%     250.2MiB / 3.642GiB   6.71%     3.46MB / 3.24MB   0B / 7.03MB   99
+
+20_May_2025_13_30_16:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    4.76%     250.2MiB / 3.642GiB   6.71%     3.47MB / 3.24MB   0B / 7.04MB   99
+
+20_May_2025_13_30_18:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    5.08%     250MiB / 3.642GiB   6.70%     3.47MB / 3.24MB   0B / 7.04MB   99
+
+20_May_2025_13_30_20:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    11.07%    250.3MiB / 3.642GiB   6.71%     3.47MB / 3.24MB   0B / 7.05MB   99
+
+20_May_2025_13_30_22:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    12.15%    249.8MiB / 3.642GiB   6.70%     3.47MB / 3.24MB   0B / 7.05MB   99
+
+20_May_2025_13_30_24:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    4.99%     249.8MiB / 3.642GiB   6.70%     3.47MB / 3.24MB   0B / 7.05MB   99
+
+20_May_2025_13_30_26:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    5.16%     250.2MiB / 3.642GiB   6.71%     3.47MB / 3.24MB   0B / 7.05MB   99
+
+20_May_2025_13_30_28:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    4.63%     250.6MiB / 3.642GiB   6.72%     3.48MB / 3.25MB   0B / 7.05MB   99
+
+20_May_2025_13_30_30:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    11.43%    250.1MiB / 3.642GiB   6.71%     3.48MB / 3.25MB   0B / 7.06MB   99
+
+20_May_2025_13_30_32:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    10.32%    249.2MiB / 3.642GiB   6.68%     3.48MB / 3.25MB   0B / 7.06MB   99
+
+20_May_2025_13_30_34:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    5.22%     249.7MiB / 3.642GiB   6.70%     3.48MB / 3.25MB   0B / 7.06MB   99
+
+20_May_2025_13_30_36:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    7.98%     250MiB / 3.642GiB   6.70%     3.48MB / 3.25MB   0B / 7.07MB   99
+
+20_May_2025_13_30_38:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    4.79%     250.1MiB / 3.642GiB   6.71%     3.48MB / 3.25MB   0B / 7.07MB   99
+
+20_May_2025_13_30_40:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    6.19%     250.7MiB / 3.642GiB   6.72%     3.48MB / 3.25MB   0B / 7.07MB   100
+
+20_May_2025_13_30_42:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    7.83%     249.5MiB / 3.642GiB   6.69%     3.49MB / 3.26MB   0B / 7.08MB   99
+
+20_May_2025_13_30_44:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    5.65%     249.2MiB / 3.642GiB   6.68%     3.49MB / 3.26MB   0B / 7.08MB   99
+
+20_May_2025_13_30_46:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    12.99%    249.9MiB / 3.642GiB   6.70%     3.49MB / 3.26MB   0B / 7.09MB   99
+
+20_May_2025_13_30_48:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    4.87%     249.4MiB / 3.642GiB   6.69%     3.49MB / 3.26MB   0B / 7.09MB   99
+
+20_May_2025_13_30_50:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    4.70%     250MiB / 3.642GiB   6.70%     3.49MB / 3.26MB   0B / 7.09MB   99
+
+20_May_2025_13_30_52:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    9.69%     250MiB / 3.642GiB   6.70%     3.49MB / 3.26MB   0B / 7.09MB   99
+
+20_May_2025_13_30_54:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O     PIDS
+9e189b2a02fd   node-1    4.62%     249.8MiB / 3.642GiB   6.70%     3.5MB / 3.27MB   0B / 7.09MB   99
+
+20_May_2025_13_30_56:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O    PIDS
+9e189b2a02fd   node-1    14.16%    250.2MiB / 3.642GiB   6.71%     3.5MB / 3.27MB   0B / 7.1MB   99
+
+20_May_2025_13_30_58:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O    PIDS
+9e189b2a02fd   node-1    5.90%     250.8MiB / 3.642GiB   6.73%     3.5MB / 3.27MB   0B / 7.1MB   99
+
+20_May_2025_13_31_00:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O    PIDS
+9e189b2a02fd   node-1    2.98%     250.1MiB / 3.642GiB   6.71%     3.5MB / 3.27MB   0B / 7.1MB   99
+
+20_May_2025_13_31_02:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O     PIDS
+9e189b2a02fd   node-1    9.53%     249.7MiB / 3.642GiB   6.70%     3.5MB / 3.27MB   0B / 7.11MB   99
+
+20_May_2025_13_31_04:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O     PIDS
+9e189b2a02fd   node-1    4.85%     250.1MiB / 3.642GiB   6.71%     3.5MB / 3.27MB   0B / 7.11MB   99
+
+20_May_2025_13_31_06:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O     PIDS
+9e189b2a02fd   node-1    13.70%    250.2MiB / 3.642GiB   6.71%     3.5MB / 3.27MB   0B / 7.12MB   99
+
+20_May_2025_13_31_08:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    4.19%     250.5MiB / 3.642GiB   6.72%     3.51MB / 3.28MB   0B / 7.12MB   99
+
+20_May_2025_13_31_10:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    5.20%     249.8MiB / 3.642GiB   6.70%     3.51MB / 3.28MB   0B / 7.12MB   99
+
+20_May_2025_13_31_12:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    9.91%     250.6MiB / 3.642GiB   6.72%     3.51MB / 3.28MB   0B / 7.13MB   99
+
+20_May_2025_13_31_14:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    4.65%     250.2MiB / 3.642GiB   6.71%     3.51MB / 3.28MB   0B / 7.13MB   99
+
+20_May_2025_13_31_16:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    14.74%    252.7MiB / 3.642GiB   6.78%     3.51MB / 3.28MB   0B / 7.13MB   100
+
+20_May_2025_13_31_18:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    5.32%     250.1MiB / 3.642GiB   6.71%     3.51MB / 3.28MB   0B / 7.14MB   99
+
+20_May_2025_13_31_20:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    4.40%     249.4MiB / 3.642GiB   6.69%     3.51MB / 3.28MB   0B / 7.14MB   99
+
+20_May_2025_13_31_22:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    20.69%    250.1MiB / 3.642GiB   6.71%     3.52MB / 3.29MB   0B / 7.14MB   99
+
+20_May_2025_13_31_24:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+9e189b2a02fd   node-1    3.74%     249.7MiB / 3.642GiB   6.70%     3.52MB / 3.29MB   0B / 7.14MB   99
+
+20_May_2025_13_31_26:
+
+20_May_2025_13_31_28:
