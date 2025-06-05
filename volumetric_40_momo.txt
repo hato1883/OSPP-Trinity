@@ -1,0 +1,574 @@
+
+20_May_2025_14_00_39:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+bbdcaade4abb   node-1    2.02%     264.5MiB / 15.18GiB   1.70%     2.42MB / 7.41MB   0B / 0B     102
+
+20_May_2025_14_00_41:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+bbdcaade4abb   node-1    1.54%     264.2MiB / 15.18GiB   1.70%     2.43MB / 7.41MB   0B / 0B     102
+
+20_May_2025_14_00_43:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+bbdcaade4abb   node-1    6.80%     265.1MiB / 15.18GiB   1.71%     2.43MB / 7.42MB   0B / 0B     102
+
+20_May_2025_14_00_45:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+bbdcaade4abb   node-1    7.62%     264.4MiB / 15.18GiB   1.70%     2.43MB / 7.42MB   0B / 0B     102
+
+20_May_2025_14_00_47:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+bbdcaade4abb   node-1    425.61%   290.4MiB / 15.18GiB   1.87%     2.72MB / 7.83MB   0B / 0B     102
+
+20_May_2025_14_00_49:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O           BLOCK I/O   PIDS
+bbdcaade4abb   node-1    75.62%    369MiB / 15.18GiB   2.37%     3.26MB / 17.7MB   0B / 0B     103
+
+20_May_2025_14_00_51:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+bbdcaade4abb   node-1    66.62%    361.7MiB / 15.18GiB   2.33%     3.35MB / 25.7MB   0B / 0B     102
+
+20_May_2025_14_00_53:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O         BLOCK I/O   PIDS
+bbdcaade4abb   node-1    230.31%   363.9MiB / 15.18GiB   2.34%     3.51MB / 27MB   0B / 0B     102
+
+20_May_2025_14_00_55:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O           BLOCK I/O   PIDS
+bbdcaade4abb   node-1    292.88%   379MiB / 15.18GiB   2.44%     3.68MB / 29.8MB   0B / 0B     103
+
+20_May_2025_14_00_57:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+bbdcaade4abb   node-1    156.42%   370.5MiB / 15.18GiB   2.38%     3.95MB / 35.7MB   0B / 0B     102
+
+20_May_2025_14_00_59:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O           BLOCK I/O   PIDS
+bbdcaade4abb   node-1    211.68%   362MiB / 15.18GiB   2.33%     4.04MB / 36.1MB   0B / 0B     102
+
+20_May_2025_14_01_01:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+bbdcaade4abb   node-1    619.09%   367.3MiB / 15.18GiB   2.36%     4.58MB / 40.6MB   0B / 0B     102
+
+20_May_2025_14_01_03:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O         BLOCK I/O   PIDS
+bbdcaade4abb   node-1    263.99%   364.5MiB / 15.18GiB   2.34%     4.75MB / 50MB   0B / 0B     103
+
+20_May_2025_14_01_05:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    265.21%   358.6MiB / 15.18GiB   2.31%     4.9MB / 51.7MB   0B / 0B     102
+
+20_May_2025_14_01_07:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O         BLOCK I/O   PIDS
+bbdcaade4abb   node-1    592.97%   364.2MiB / 15.18GiB   2.34%     5.24MB / 53MB   0B / 0B     102
+
+20_May_2025_14_01_09:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+bbdcaade4abb   node-1    81.26%    367.5MiB / 15.18GiB   2.36%     5.51MB / 55.6MB   0B / 0B     103
+
+20_May_2025_14_01_11:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O           BLOCK I/O   PIDS
+bbdcaade4abb   node-1    34.66%    364MiB / 15.18GiB   2.34%     5.64MB / 59.5MB   0B / 0B     102
+
+20_May_2025_14_01_13:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+bbdcaade4abb   node-1    151.59%   367.6MiB / 15.18GiB   2.36%     5.75MB / 60.1MB   0B / 0B     102
+
+20_May_2025_14_01_15:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    566.61%   376.9MiB / 15.18GiB   2.42%     6.2MB / 69.9MB   0B / 0B     102
+
+20_May_2025_14_01_17:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O           BLOCK I/O   PIDS
+bbdcaade4abb   node-1    72.02%    377MiB / 15.18GiB   2.43%     6.25MB / 70.6MB   0B / 0B     103
+
+20_May_2025_14_01_19:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+bbdcaade4abb   node-1    333.23%   381.6MiB / 15.18GiB   2.45%     6.45MB / 71.3MB   0B / 0B     102
+
+20_May_2025_14_01_21:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+bbdcaade4abb   node-1    62.66%    387.6MiB / 15.18GiB   2.49%     6.64MB / 71.9MB   0B / 0B     102
+
+20_May_2025_14_01_23:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+bbdcaade4abb   node-1    561.54%   403.9MiB / 15.18GiB   2.60%     6.96MB / 78.9MB   0B / 0B     103
+
+20_May_2025_14_01_25:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+bbdcaade4abb   node-1    154.98%   412.6MiB / 15.18GiB   2.65%     7.12MB / 81.1MB   0B / 0B     102
+
+20_May_2025_14_01_27:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+bbdcaade4abb   node-1    31.43%    407.1MiB / 15.18GiB   2.62%     7.15MB / 81.5MB   0B / 0B     102
+
+20_May_2025_14_01_29:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+bbdcaade4abb   node-1    267.72%   413.4MiB / 15.18GiB   2.66%     7.32MB / 82.4MB   0B / 0B     103
+
+20_May_2025_14_01_31:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+bbdcaade4abb   node-1    201.49%   450.1MiB / 15.18GiB   2.89%     7.62MB / 92.2MB   0B / 0B     102
+
+20_May_2025_14_01_33:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+bbdcaade4abb   node-1    412.03%   460.8MiB / 15.18GiB   2.96%     7.83MB / 93.1MB   0B / 0B     102
+
+20_May_2025_14_01_35:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    430.34%   484.3MiB / 15.18GiB   3.11%     8.21MB / 104MB   0B / 0B     103
+
+20_May_2025_14_01_37:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    594.61%   486.1MiB / 15.18GiB   3.13%     8.66MB / 113MB   0B / 0B     102
+
+20_May_2025_14_01_39:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    868.93%   524MiB / 15.18GiB   3.37%     9.82MB / 115MB   0B / 0B     102
+
+20_May_2025_14_01_41:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    80.93%    534.2MiB / 15.18GiB   3.44%     10.4MB / 150MB   0B / 0B     102
+
+20_May_2025_14_01_43:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    45.47%    524.1MiB / 15.18GiB   3.37%     10.4MB / 150MB   0B / 0B     102
+
+20_May_2025_14_01_45:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    121.65%   523.5MiB / 15.18GiB   3.37%     10.5MB / 150MB   0B / 0B     102
+
+20_May_2025_14_01_47:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    139.91%   527.8MiB / 15.18GiB   3.40%     10.6MB / 151MB   0B / 0B     103
+
+20_May_2025_14_01_49:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    271.26%   536MiB / 15.18GiB   3.45%     10.7MB / 152MB   0B / 0B     102
+
+20_May_2025_14_01_51:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    499.93%   536.4MiB / 15.18GiB   3.45%     11.2MB / 159MB   0B / 0B     102
+
+20_May_2025_14_01_53:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    576.07%   537MiB / 15.18GiB   3.45%     11.4MB / 168MB   0B / 0B     102
+
+20_May_2025_14_01_55:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    170.61%   536.8MiB / 15.18GiB   3.45%     11.8MB / 181MB   0B / 0B     103
+
+20_May_2025_14_01_57:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    33.73%    512.5MiB / 15.18GiB   3.30%     11.8MB / 181MB   0B / 0B     102
+
+20_May_2025_14_01_59:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    44.72%    506.2MiB / 15.18GiB   3.26%     11.9MB / 181MB   0B / 0B     102
+
+20_May_2025_14_02_01:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    58.78%    503.5MiB / 15.18GiB   3.24%     11.9MB / 184MB   0B / 0B     102
+
+20_May_2025_14_02_03:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    337.25%   508.6MiB / 15.18GiB   3.27%     12.2MB / 185MB   0B / 0B     102
+
+20_May_2025_14_02_05:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    445.37%   505.1MiB / 15.18GiB   3.25%     12.6MB / 195MB   0B / 0B     102
+
+20_May_2025_14_02_07:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    56.73%    507.2MiB / 15.18GiB   3.26%     12.9MB / 208MB   0B / 0B     103
+
+20_May_2025_14_02_09:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    328.70%   494.9MiB / 15.18GiB   3.18%     13.2MB / 216MB   0B / 0B     102
+
+20_May_2025_14_02_11:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    101.97%   491.3MiB / 15.18GiB   3.16%     13.3MB / 218MB   0B / 0B     102
+
+20_May_2025_14_02_13:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    128.51%   488MiB / 15.18GiB   3.14%     13.4MB / 219MB   0B / 0B     102
+
+20_May_2025_14_02_15:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    555.49%   493MiB / 15.18GiB   3.17%     13.7MB / 220MB   0B / 0B     102
+
+20_May_2025_14_02_17:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    517.87%   498MiB / 15.18GiB   3.20%     14.1MB / 221MB   0B / 0B     102
+
+20_May_2025_14_02_19:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    627.93%   535.7MiB / 15.18GiB   3.45%     14.8MB / 237MB   0B / 0B     103
+
+20_May_2025_14_02_21:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    748.45%   570.6MiB / 15.18GiB   3.67%     15.5MB / 252MB   0B / 0B     102
+
+20_May_2025_14_02_23:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    64.86%    563.6MiB / 15.18GiB   3.62%     15.6MB / 255MB   0B / 0B     102
+
+20_May_2025_14_02_25:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    64.34%    564.5MiB / 15.18GiB   3.63%     15.6MB / 256MB   0B / 0B     103
+
+20_May_2025_14_02_27:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    21.73%    555.6MiB / 15.18GiB   3.57%     15.6MB / 257MB   0B / 0B     102
+
+20_May_2025_14_02_29:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    150.23%   552.3MiB / 15.18GiB   3.55%     15.7MB / 257MB   0B / 0B     102
+
+20_May_2025_14_02_31:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    345.94%   560.5MiB / 15.18GiB   3.61%     16.1MB / 279MB   0B / 0B     102
+
+20_May_2025_14_02_33:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    487.23%   566.8MiB / 15.18GiB   3.65%     16.5MB / 298MB   0B / 0B     103
+
+20_May_2025_14_02_35:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    934.68%   565MiB / 15.18GiB   3.63%     17.3MB / 327MB   0B / 0B     102
+
+20_May_2025_14_02_37:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    266.77%   557.6MiB / 15.18GiB   3.59%     17.8MB / 343MB   0B / 0B     102
+
+20_May_2025_14_02_39:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    33.94%    555.4MiB / 15.18GiB   3.57%     17.8MB / 344MB   0B / 0B     103
+
+20_May_2025_14_02_41:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    54.31%    548.4MiB / 15.18GiB   3.53%     17.8MB / 344MB   0B / 0B     102
+
+20_May_2025_14_02_43:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    722.15%   619.9MiB / 15.18GiB   3.99%     18.5MB / 346MB   0B / 0B     102
+
+20_May_2025_14_02_45:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    377.79%   647.3MiB / 15.18GiB   4.16%     19.3MB / 353MB   0B / 0B     102
+
+20_May_2025_14_02_47:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    335.80%   642.9MiB / 15.18GiB   4.14%     20.1MB / 396MB   0B / 0B     103
+
+20_May_2025_14_02_49:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    621.19%   638.4MiB / 15.18GiB   4.11%     20.4MB / 397MB   0B / 0B     102
+
+20_May_2025_14_02_51:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    565.34%   641.5MiB / 15.18GiB   4.13%     20.8MB / 399MB   0B / 0B     102
+
+20_May_2025_14_02_53:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    664.30%   650MiB / 15.18GiB   4.18%     21.2MB / 400MB   0B / 0B     103
+
+20_May_2025_14_02_55:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    122.29%   648.4MiB / 15.18GiB   4.17%     21.5MB / 402MB   0B / 0B     102
+
+20_May_2025_14_02_57:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    69.95%    636.1MiB / 15.18GiB   4.09%     21.6MB / 403MB   0B / 0B     102
+
+20_May_2025_14_02_59:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    511.61%   628MiB / 15.18GiB   4.04%     21.7MB / 403MB   0B / 0B     102
+
+20_May_2025_14_03_01:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    107.27%   623.3MiB / 15.18GiB   4.01%     21.7MB / 404MB   0B / 0B     103
+
+20_May_2025_14_03_03:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O        BLOCK I/O   PIDS
+bbdcaade4abb   node-1    520.55%   627.1MiB / 15.18GiB   4.03%     22MB / 412MB   0B / 0B     102
+
+20_May_2025_14_03_05:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    836.92%   633.2MiB / 15.18GiB   4.07%     22.7MB / 434MB   0B / 0B     102
+
+20_May_2025_14_03_07:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    811.27%   638.6MiB / 15.18GiB   4.11%     23.4MB / 455MB   0B / 0B     103
+
+20_May_2025_14_03_09:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O        BLOCK I/O   PIDS
+bbdcaade4abb   node-1    522.60%   632.5MiB / 15.18GiB   4.07%     24MB / 474MB   0B / 0B     102
+
+20_May_2025_14_03_11:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    132.82%   627.4MiB / 15.18GiB   4.04%     24.1MB / 475MB   0B / 0B     102
+
+20_May_2025_14_03_13:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    212.21%   633.2MiB / 15.18GiB   4.07%     24.2MB / 476MB   0B / 0B     102
+
+20_May_2025_14_03_15:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    28.25%    629MiB / 15.18GiB   4.05%     24.3MB / 476MB   0B / 0B     103
+
+20_May_2025_14_03_17:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    176.14%   617.5MiB / 15.18GiB   3.97%     24.3MB / 481MB   0B / 0B     102
+
+20_May_2025_14_03_19:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    738.25%   623.7MiB / 15.18GiB   4.01%     24.8MB / 496MB   0B / 0B     102
+
+20_May_2025_14_03_21:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    746.75%   628.6MiB / 15.18GiB   4.04%     25.5MB / 519MB   0B / 0B     104
+
+20_May_2025_14_03_23:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    814.97%   639.5MiB / 15.18GiB   4.11%     26.2MB / 540MB   0B / 0B     103
+
+20_May_2025_14_03_25:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    124.16%   637.5MiB / 15.18GiB   4.10%     26.5MB / 550MB   0B / 0B     103
+
+20_May_2025_14_03_27:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    37.33%    627.5MiB / 15.18GiB   4.04%     26.5MB / 550MB   0B / 0B     103
+
+20_May_2025_14_03_29:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    26.93%    620.6MiB / 15.18GiB   3.99%     26.6MB / 551MB   0B / 0B     103
+
+20_May_2025_14_03_31:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    446.02%   619.6MiB / 15.18GiB   3.99%     26.8MB / 555MB   0B / 0B     103
+
+20_May_2025_14_03_33:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    689.34%   628.6MiB / 15.18GiB   4.04%     27.2MB / 556MB   0B / 0B     104
+
+20_May_2025_14_03_35:
+CONTAINER ID   NAME      CPU %      MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    1279.26%   737.2MiB / 15.18GiB   4.74%     28.7MB / 581MB   0B / 0B     103
+
+20_May_2025_14_03_37:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O        BLOCK I/O   PIDS
+bbdcaade4abb   node-1    900.07%   767MiB / 15.18GiB   4.93%     30MB / 640MB   0B / 0B     103
+
+20_May_2025_14_03_39:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    303.82%   753MiB / 15.18GiB   4.84%     30.6MB / 643MB   0B / 0B     103
+
+20_May_2025_14_03_41:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    107.23%   757MiB / 15.18GiB   4.87%     30.7MB / 645MB   0B / 0B     103
+
+20_May_2025_14_03_43:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    173.58%   749MiB / 15.18GiB   4.82%     30.8MB / 645MB   0B / 0B     103
+
+20_May_2025_14_03_45:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    9.79%     739.8MiB / 15.18GiB   4.76%     30.9MB / 646MB   0B / 0B     103
+
+20_May_2025_14_03_47:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    54.11%    738.2MiB / 15.18GiB   4.75%     30.9MB / 646MB   0B / 0B     104
+
+20_May_2025_14_03_49:
+CONTAINER ID   NAME      CPU %      MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    1272.27%   740.1MiB / 15.18GiB   4.76%     31.4MB / 652MB   0B / 0B     103
+
+20_May_2025_14_03_51:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O        BLOCK I/O   PIDS
+bbdcaade4abb   node-1    839.40%   737.2MiB / 15.18GiB   4.74%     32MB / 671MB   0B / 0B     103
+
+20_May_2025_14_03_53:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    718.63%   724.3MiB / 15.18GiB   4.66%     32.6MB / 682MB   0B / 0B     103
+
+20_May_2025_14_03_55:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    195.70%   720.8MiB / 15.18GiB   4.64%     32.8MB / 684MB   0B / 0B     103
+
+20_May_2025_14_03_57:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    78.55%    707.7MiB / 15.18GiB   4.55%     32.9MB / 685MB   0B / 0B     103
+
+20_May_2025_14_03_59:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O        BLOCK I/O   PIDS
+bbdcaade4abb   node-1    7.60%     701MiB / 15.18GiB   4.51%     33MB / 685MB   0B / 0B     103
+
+20_May_2025_14_04_01:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    155.99%   682.8MiB / 15.18GiB   4.39%     33.1MB / 693MB   0B / 0B     103
+
+20_May_2025_14_04_03:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    62.95%    692.8MiB / 15.18GiB   4.46%     33.1MB / 693MB   0B / 0B     103
+
+20_May_2025_14_04_05:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    39.15%    668.1MiB / 15.18GiB   4.30%     33.3MB / 703MB   0B / 0B     103
+
+20_May_2025_14_04_07:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    256.64%   655.5MiB / 15.18GiB   4.22%     33.6MB / 731MB   0B / 0B     103
+
+20_May_2025_14_04_09:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    56.74%    648MiB / 15.18GiB   4.17%     33.8MB / 743MB   0B / 0B     103
+
+20_May_2025_14_04_11:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    3.70%     643.2MiB / 15.18GiB   4.14%     33.9MB / 747MB   0B / 0B     103
+
+20_May_2025_14_04_13:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    2.86%     640.6MiB / 15.18GiB   4.12%     33.9MB / 747MB   0B / 0B     103
+
+20_May_2025_14_04_15:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    7.14%     640.1MiB / 15.18GiB   4.12%     33.9MB / 747MB   0B / 0B     103
+
+20_May_2025_14_04_17:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    2.66%     639.2MiB / 15.18GiB   4.11%     33.9MB / 747MB   0B / 0B     103
+
+20_May_2025_14_04_19:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    24.15%    638MiB / 15.18GiB   4.10%     33.9MB / 747MB   0B / 0B     103
+
+20_May_2025_14_04_21:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    2.33%     635.6MiB / 15.18GiB   4.09%     33.9MB / 747MB   0B / 0B     103
+
+20_May_2025_14_04_23:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    2.01%     635.6MiB / 15.18GiB   4.09%     33.9MB / 747MB   0B / 0B     103
+
+20_May_2025_14_04_25:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O        BLOCK I/O   PIDS
+bbdcaade4abb   node-1    116.37%   642MiB / 15.18GiB   4.13%     34MB / 747MB   0B / 0B     103
+
+20_May_2025_14_04_27:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    18.37%    641.1MiB / 15.18GiB   4.12%     34.2MB / 747MB   0B / 0B     103
+
+20_May_2025_14_04_29:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    13.27%    640.7MiB / 15.18GiB   4.12%     34.2MB / 747MB   0B / 0B     103
+
+20_May_2025_14_04_31:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    183.55%   693.7MiB / 15.18GiB   4.46%     34.7MB / 748MB   0B / 0B     103
+
+20_May_2025_14_04_33:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O        BLOCK I/O   PIDS
+bbdcaade4abb   node-1    133.03%   691.2MiB / 15.18GiB   4.45%     35MB / 748MB   0B / 0B     103
+
+20_May_2025_14_04_35:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    28.54%    671.2MiB / 15.18GiB   4.32%     35.1MB / 749MB   0B / 0B     103
+
+20_May_2025_14_04_37:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    143.09%   663MiB / 15.18GiB   4.26%     35.3MB / 749MB   0B / 0B     103
+
+20_May_2025_14_04_39:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    107.80%   657.5MiB / 15.18GiB   4.23%     35.5MB / 749MB   0B / 0B     103
+
+20_May_2025_14_04_41:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    20.03%    655.4MiB / 15.18GiB   4.22%     35.5MB / 749MB   0B / 0B     103
+
+20_May_2025_14_04_43:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    3.56%     655.6MiB / 15.18GiB   4.22%     35.5MB / 749MB   0B / 0B     103
+
+20_May_2025_14_04_45:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    201.79%   652.6MiB / 15.18GiB   4.20%     35.5MB / 749MB   0B / 0B     103
+
+20_May_2025_14_04_47:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    4.45%     651.5MiB / 15.18GiB   4.19%     35.5MB / 749MB   0B / 0B     103
+
+20_May_2025_14_04_49:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    12.84%    650.2MiB / 15.18GiB   4.18%     35.5MB / 749MB   0B / 0B     103
+
+20_May_2025_14_04_51:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    2.87%     647.3MiB / 15.18GiB   4.16%     35.5MB / 749MB   0B / 0B     103
+
+20_May_2025_14_04_53:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    22.72%    647.2MiB / 15.18GiB   4.16%     35.5MB / 749MB   0B / 0B     103
+
+20_May_2025_14_04_55:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    6.59%     648.2MiB / 15.18GiB   4.17%     35.5MB / 749MB   0B / 0B     103
+
+20_May_2025_14_04_57:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    2.40%     647.4MiB / 15.18GiB   4.16%     35.5MB / 749MB   0B / 0B     103
+
+20_May_2025_14_04_59:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    11.50%    649.4MiB / 15.18GiB   4.18%     35.5MB / 749MB   0B / 0B     104
+
+20_May_2025_14_05_01:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    1.86%     646.8MiB / 15.18GiB   4.16%     35.5MB / 749MB   0B / 0B     103
+
+20_May_2025_14_05_03:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    1.93%     646.9MiB / 15.18GiB   4.16%     35.5MB / 749MB   0B / 0B     103
+
+20_May_2025_14_05_05:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    12.56%    647.5MiB / 15.18GiB   4.16%     35.5MB / 749MB   0B / 0B     103
+
+20_May_2025_14_05_07:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    1.92%     646.7MiB / 15.18GiB   4.16%     35.5MB / 749MB   0B / 0B     103
+
+20_May_2025_14_05_09:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    4.71%     646.7MiB / 15.18GiB   4.16%     35.5MB / 749MB   0B / 0B     103
+
+20_May_2025_14_05_11:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    2.99%     647.4MiB / 15.18GiB   4.16%     35.5MB / 749MB   0B / 0B     103
+
+20_May_2025_14_05_13:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    1.60%     646.8MiB / 15.18GiB   4.16%     35.5MB / 749MB   0B / 0B     103
+
+20_May_2025_14_05_15:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    11.37%    647.9MiB / 15.18GiB   4.17%     35.5MB / 749MB   0B / 0B     103
+
+20_May_2025_14_05_17:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    2.68%     647.4MiB / 15.18GiB   4.16%     35.5MB / 749MB   0B / 0B     103
+
+20_May_2025_14_05_19:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    4.95%     647.5MiB / 15.18GiB   4.16%     35.5MB / 749MB   0B / 0B     103
+
+20_May_2025_14_05_21:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    2.11%     647.6MiB / 15.18GiB   4.17%     35.5MB / 749MB   0B / 0B     103
+
+20_May_2025_14_05_24:
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+bbdcaade4abb   node-1    2.02%     647.4MiB / 15.18GiB   4.16%     35.5MB / 749MB   0B / 0B     103
+
+20_May_2025_14_05_26:
